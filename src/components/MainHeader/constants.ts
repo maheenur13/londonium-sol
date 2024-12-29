@@ -1,65 +1,63 @@
-interface GalleryItem {
-    className: string;
-    title?: string; // title is optional
-    image?: string; // image is optional
-    bgImage?: string; // bgImage is optional
-}
-
-export const galleryArray: GalleryItem[] = [
+export const galleryArray = [
     {
         className: 'one',
         title: 'Family',
-        bgImage: '/images/family-law-in-italy.jpg',
+        image: '',
     },
     {
         className: 'two',
+        // title: 'two',
         image: '/images/image-1.png',
     },
     {
         className: 'three',
         title: 'Medical Negligence',
+        image: '',
         bgImage: '/images/bg-image-1.png',
     },
     {
         className: 'four',
-        title: 'Mental Health',
-        bgImage: '/images/mental.jpg',
+        // title: 'four',
+        image: '/images/image-2.png',
     },
     {
         className: 'five',
         title: 'Employment',
-        bgImage: '/images/employment.webp',
+        image: '',
     },
     {
         className: 'six',
-        title: 'Housing Legal Aid',
-        bgImage: '/images/legal-aid.jpg',
+        title: 'Immigration',
+        image: '',
     },
     {
         className: 'seven',
         title: 'Personal Injury',
-        bgImage: '/images/personal-injury.jpg',
+        image: '',
     },
     {
         className: 'eight',
+        // title: 'eight',
         image: '/images/image-3.png',
     },
     {
         className: 'nine',
+        // title: 'nine',
         image: '/images/image-4.png',
     },
     {
         className: 'ten',
         title: 'Crime',
-        bgImage: '/images/crime.png',
+        image: '',
     },
     {
         className: 'eleven',
-        title: 'Commercial Conveyancing',
-        bgImage: '/images/conveyancing-commercial.jpg',
+        title: 'Conveyancing',
+        image: '',
     },
     {
         className: 'twelve',
         title: 'Civil Litigation',
+        image: '',
     },
 ];
