@@ -33,7 +33,7 @@ const items = [
 
 const SecondSection: FC = () => {
 
-
+    //
     return (
         <div className='m-5'>
             <Row xs={1} md={4} className='g-4'>
