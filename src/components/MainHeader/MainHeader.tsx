@@ -1,3 +1,5 @@
+import { getDescriptionFontSize, getRowSize, getSubtitleFontSize, getTitleFontSize } from '@utils/index';
+import { useWindowSize } from 'hooks';
 import useForm from 'hooks/useForm';
 import { FC, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
@@ -5,6 +7,21 @@ import styled from 'styled-components';
 import { galleryArray, HeaderItemProps } from './constants';
 
 export const MainHeader: FC = () => {
+
+    const { width } = useWindowSize();
+    const responsiveFontSize = getTitleFontSize(width);
+
+    const descriptionFontSize = getDescriptionFontSize(width);
+
+    const subtitleFontSize = getSubtitleFontSize(width);
+
+    console.log({ subtitleFontSize });
+
+
+
+
+
+
     const [bgImage, setBgImage] = useState<any>(null);
     const [isHoveredIndex, setIsHoveredIndex] = useState<any>(null);
 
@@ -25,7 +42,7 @@ export const MainHeader: FC = () => {
         e.preventDefault();
         if (validateForm()) {
             // Handle form submission
-            console.log('Form submitted:', formData);
+
             // Reset form
             setFormData({ name: '', email: '', message: '', phone: '', category: '' });
             setErrors({ name: '', email: '', message: '', phone: '', category: '' });
@@ -33,13 +50,15 @@ export const MainHeader: FC = () => {
     };
 
     const handleHoverOnImage = (item: any, index: number) => {
-        console.log(item);
+
         setIsHoveredIndex(index);
         setBgImage(item?.bgImage);
     };
+
+
     return (
         <div>
-            <Wrapper hoverimage={bgImage} className='wrapper  mx-4'>
+            <Wrapper width={width} hoverimage={bgImage} className='wrapper  mx-4'>
                 {galleryArray.map((item, idx) => (
                     <ImageWrapper
                         onMouseLeave={() => {
@@ -57,19 +76,17 @@ export const MainHeader: FC = () => {
                         position={item.position}
                         hoverimage={bgImage}
                     >
-                        {!item?.image && !bgImage && item.title}
+                        <p style={{ fontSize: descriptionFontSize }}>{!item?.image && !bgImage && item.title}</p>
 
                         <div className='hover-item'>
                             {item?.bgImage && (
                                 <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
-                                    <h4>{item?.bgImage && item.title}</h4>
-                                    <button onClick={handleClaimClick}>Start Your Claim</button>
+                                    <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
+                                    <button style={{ fontSize: descriptionFontSize }} onClick={handleClaimClick}>Start Your Claim</button>
                                 </div>
                             )}
                         </div>
-                        {/* {item.image && <Image style={{
-                            objectFit: 'contain'
-                        }} src={item.image} fill alt={`image-${item.title}`} />} */}
+
                     </ImageWrapper>
                 ))}
             </Wrapper>
@@ -177,8 +194,7 @@ const ImageWrapper = styled.div<
     Pick<HeaderItemProps, 'hoverimage' | 'gridColumn' | 'gridRow' | 'bgColor' | 'backImage' | 'position'>
 >`
     position: relative;
-    overflow: hidden;
-    border: 6px solid white;
+    border: 4px solid white;
 
     grid-column: ${(props) => props.gridColumn};
     grid-row: ${(props) => props.gridRow};
@@ -223,12 +239,11 @@ const ImageWrapper = styled.div<
     }
 `;
 
-const Wrapper = styled.div<{ hoverimage: string }>`
+const Wrapper = styled.div<{ hoverimage: string; width: number }>`
     position: relative;
     display: grid;
     grid-template-columns: repeat(10, 1fr) auto;
-
-    grid-auto-rows: 130px;
+    grid-auto-rows: ${({ width }) => getRowSize(width)} ;
     transition: 0.5s;
     background-image: url(${({ hoverimage }) => hoverimage});
     transition: background-size 0.3s ease;
