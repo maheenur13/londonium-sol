@@ -230,11 +230,8 @@ const ImageWrapper = styled.div<
     }
 
     &:hover {
-        /* transition: opacity 0.6s; */
         .hover-item {
             opacity: 1;
-
-            /* transition: opacity 0.6s; */
         }
     }
 `;
