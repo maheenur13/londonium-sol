@@ -1,63 +1,108 @@
-export const galleryArray = [
+export interface HeaderItemProps {
+    bgColor?: string;
+    gridColumn: string;
+    gridRow: string;
+    backImage?: string;
+    hoverimage?: string;
+    className?: string;
+    title?: string;
+    image?: string;
+    bgImage?: string;
+}
+
+export const galleryArray: HeaderItemProps[] = [
     {
-        className: 'one',
         title: 'Family',
-        image: '',
+        gridColumn: '1',
+        gridRow: '1',
     },
     {
-        className: 'two',
-        // title: 'two',
         image: '/images/image-1.png',
+        gridColumn: '1',
+        gridRow: '2 / 5',
     },
     {
-        className: 'three',
         title: 'Medical Negligence',
         image: '',
         bgImage: '/images/bg-image-1.png',
+        gridColumn: '2 / 3',
+        gridRow: '1 / 3',
     },
     {
-        className: 'four',
-        // title: 'four',
+        image: '/images/image-1.png',
+        bgImage: '/images/bg-image-1.png',
+        gridColumn: '2 / 4',
+        gridRow: '3',
+    },
+    {
         image: '/images/image-2.png',
+        gridColumn: '2 / 4',
+        gridRow: '4',
     },
     {
-        className: 'five',
         title: 'Employment',
         image: '',
+        gridColumn: '3 / 5',
+        gridRow: '1 / 3',
     },
     {
-        className: 'six',
         title: 'Immigration',
         image: '',
+        gridColumn: '4 / 5',
+        gridRow: '3 / 5',
     },
     {
-        className: 'seven',
         title: 'Personal Injury',
         image: '',
+        gridColumn: '5 / 6',
+        gridRow: '1 / 3',
     },
     {
-        className: 'eight',
-        // title: 'eight',
         image: '/images/image-3.png',
+        gridColumn: '5 / 7',
+        gridRow: '3 / 5',
     },
     {
-        className: 'nine',
-        // title: 'nine',
         image: '/images/image-4.png',
+        gridColumn: '6 / 8',
+        gridRow: '1 / 3',
     },
     {
-        className: 'ten',
         title: 'Crime',
         image: '',
+        gridColumn: '7 / 8',
+        gridRow: '3 / 5',
     },
     {
-        className: 'eleven',
         title: 'Conveyancing',
         image: '',
+        gridColumn: '8 / 9',
+        gridRow: '1 / 2',
     },
     {
-        className: 'twelve',
+        image: '',
+        gridColumn: '8 / 9',
+        gridRow: '2 / 4',
+    },
+    {
         title: 'Civil Litigation',
         image: '',
+        gridColumn: '8 / 9',
+        gridRow: '4 / 5',
+    },
+    {
+        image: '',
+        gridColumn: '9 / 10',
+        gridRow: '1 / 3',
+    },
+    {
+        image: '',
+        gridColumn: '10 / 11',
+        gridRow: '1 / 3',
+    },
+    {
+        image: '',
+        gridColumn: '9 / 11',
+        gridRow: '3 / 5',
     },
 ];

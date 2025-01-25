@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 
 import styled from 'styled-components';
-import { galleryArray } from './constants';
+import { galleryArray, HeaderItemProps } from './constants';
 
 export const MainHeader: FC = () => {
     const [bgImage, setBgImage] = useState<any>(null);
@@ -28,7 +28,9 @@ export const MainHeader: FC = () => {
                     }}
                     onMouseEnter={() => handleHoverOnImage(item, idx)}
                     backImage={item?.image}
-                    className={`${item.className} childItem`}
+                    gridColumn={item.gridColumn}
+                    gridRow={item.gridRow}
+                    bgColor={'#edf0f2'}
                     key={idx}
                     hoverimage={bgImage}
                 >
@@ -50,7 +52,9 @@ export const MainHeader: FC = () => {
     );
 };
 
-const ImageWrapper = styled.div<{ backImage?: string; hoverimage: string }>`
+
+
+const ImageWrapper = styled.div<Pick<HeaderItemProps, 'hoverimage' | 'gridColumn' | 'gridRow' | 'bgColor' | 'backImage'>>`
     position: relative;
     padding: 0.625rem;
 
@@ -60,6 +64,10 @@ const ImageWrapper = styled.div<{ backImage?: string; hoverimage: string }>`
     /* background-origin: padding-box; */
     background-attachment: ${({ hoverimage }) => hoverimage && 'fixed'};
     background-position: center;
+
+    background-color: ${props => props.bgColor};
+    grid-column: ${props => props.gridColumn};
+    grid-row: ${props => props.gridRow};
     /* transition: 0.1s; */
 
     &:before {
@@ -105,13 +113,13 @@ const ImageWrapper = styled.div<{ backImage?: string; hoverimage: string }>`
     } */
 `;
 
+
 const Wrapper = styled.div<{ hoverimage: string }>`
     position: relative;
     display: grid;
     grid-template-columns: repeat(10, 1fr) auto;
     gap: 10px;
     grid-auto-rows: 130px;
-    /* align-items: center; */
     transition: 0.5s;
 
     div {
@@ -119,156 +127,6 @@ const Wrapper = styled.div<{ hoverimage: string }>`
         justify-content: flex-start;
         align-items: end;
     }
-    .one {
-        background-color: #edf0f2;
-        grid-column: 1;
-        grid-row: 1;
-    }
-    .two {
-        background-color: #edf0f2;
-        grid-column: 1;
-        grid-row: 2 / 5;
-    }
-    .three {
-        background-color: #edf0f2;
-        grid-column: 2 / 4;
-        grid-row: 1 / 4;
-    }
-    .four {
-        background-color: #edf0f2;
-        grid-column: 2 / 4;
-        grid-row: 4;
-    }
-    .five {
-        background-color: #edf0f2;
-        grid-column: 4 / 6;
-        grid-row: 1;
-    }
-    .six {
-        background-color: #edf0f2;
-        grid-column: 4 / 6;
-        grid-row: 2 / 5;
-    }
-    .seven {
-        background-color: #edf0f2;
-        grid-column: 6 / 8;
-        grid-row: 1 / 3;
-    }
-    .eight {
-        background-color: #edf0f2;
-        grid-column: 6;
-        grid-row: 3 / 5;
-    }
-    .nine {
-        background-color: #edf0f2;
-        grid-column: 8 / 10;
-        grid-row: 1 / 3;
-    }
-    .ten {
-        background-color: #edf0f2;
-        grid-column: 7 / 10;
-        grid-row: 3/ 5;
-    }
-    .eleven {
-        background-color: #edf0f2;
-        grid-column: 10;
-        grid-row: 1 / 3;
-    }
-    .twelve {
-        background-color: #edf0f2;
-        grid-column: 10;
-        grid-row: 3 / 5;
-    }
-
-    /* @media only screen and (max-width: 768px) {
-        grid-template-columns: repeat(5, 1fr);
-        grid-auto-rows: minmax(150px, auto);
-
-        .two {
-            grid-row: 2 / 4;
-        }
-        .three {
-            grid-column: 1 / 3;
-            grid-row: 4;
-        }
-        .four {
-            grid-column: 3 / 5;
-            grid-row: 1 / 4;
-        }
-        .six {
-            grid-row: 4 / 6;
-        }
-        .seven {
-            grid-column: 1 / 3;
-            grid-row: 1 / 3;
-        }
-        .eight {
-            grid-row: 3 / 5;
-        }
-        .nine {
-            grid-column: 3 / 5;
-            grid-row: 1 / 3;
-        }
-        .ten {
-            grid-column: 1 / 6;
-            grid-row: 5;
-        }
-        .eleven {
-            display: none;
-        }
-        .twelve {
-            display: none;
-        }
-    } */
+    
+  
 `;
-const WithoutImage = styled.div`
-    background-color: #edf0f2;
-`;
-const WithImage = styled.div`
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #edf0f2;
-`;
-
-{
-    /* <Wrapper className='p-3'>
-            <Row className='m-auto'>
-                <Col md={1} style={{ height: '450px', border: '1px solid red' }}>
-                    <Row className=' mx-auto my-auto w-100 h-100 border border-success'>
-                        <Col md={12} className='w-100  h-25 p-0 pb-1'>
-                            <WithoutImage className='p-2 h-100'>
-                                <h6>Public</h6>
-                            </WithoutImage>
-                        </Col>
-                        <Col md={12} className='flex-grow-1 h-75 p-0 pt-1'>
-                            <WithImage>
-                                <Image src='/images/image-1.png' alt='image1' fill />
-                            </WithImage>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col md={3} style={{ height: '450px', border: '1px solid red' }}>
-                    <Row className='g-2 mx-auto my-auto w-100 h-100 border border-success'>
-                        <Col md={12} className='h-75'>
-                            <WithoutImage className='w-100 h-100'>Public</WithoutImage>
-                        </Col>
-                        <Col md={12} className='h-25'>
-                            <WithImage className='h-100'>
-                                <Image src='/images/image-2.png' alt='image1' fill />
-                            </WithImage>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col md={3} style={{ height: '450px', border: '1px solid red' }}>
-                    ok2
-                </Col>
-                <Col md={4} style={{ height: '450px', border: '1px solid red' }}>
-                    ok3
-                </Col>
-                <Col md={1} style={{ height: '450px', border: '1px solid red' }}>
-                    ok3
-                </Col>
-            </Row>
-        </Wrapper> */
-}
