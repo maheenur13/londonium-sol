@@ -4,6 +4,8 @@ import { Card, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const SecondSection: FC = () => {
+
+    //
     return (
         <div className='m-5'>
             <Row xs={1} md={4} className='g-4'>
