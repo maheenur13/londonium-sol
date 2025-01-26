@@ -1,6 +1,7 @@
-import { getDescriptionFontSize, getRowSize, getSubtitleFontSize, getTitleFontSize } from '@utils/index';
+import { getDescriptionFontSize, getRowSize, getSubtitleFontSize } from '@utils/index';
 import { useWindowSize } from 'hooks';
 import useForm from 'hooks/useForm';
+import { useRouter } from 'next/router';
 import { FC, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -9,16 +10,12 @@ import { galleryArray, HeaderItemProps } from './constants';
 export const MainHeader: FC = () => {
 
     const { width } = useWindowSize();
-    const responsiveFontSize = getTitleFontSize(width);
+
+    const route = useRouter()
 
     const descriptionFontSize = getDescriptionFontSize(width);
 
     const subtitleFontSize = getSubtitleFontSize(width);
-
-
-
-
-
 
     const [bgImage, setBgImage] = useState<any>(null);
     const [isHoveredIndex, setIsHoveredIndex] = useState<any>(null);
@@ -53,6 +50,12 @@ export const MainHeader: FC = () => {
         setBgImage(item?.bgImage);
     };
 
+    const handleItemClick = (item: HeaderItemProps) => {
+        if (item.bgImage) {
+            route.push(`/services/${item.title}`)
+        }
+    }
+
 
     return (
         <div>
@@ -73,6 +76,7 @@ export const MainHeader: FC = () => {
                         key={idx}
                         position={item.position}
                         hoverimage={bgImage}
+                        onClick={() => handleItemClick(item)}
                     >
                         <p style={{ fontSize: descriptionFontSize, margin: 0 }}>{!item?.image && !bgImage && item.title}</p>
 

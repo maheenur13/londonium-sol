@@ -6,28 +6,28 @@ import styled from 'styled-components';
 const items = [
     {
         title: 'Latest News',
-        subtitle: 'FIRM COMMENDED BY NATIONAL LEGAL DIRECTORIES',
-        text: 'We have once again achieved high rankings across a wide range of practice areas in the latest editions of The Legal 500 and Chambers UK directories, alongside recognition in The Times Best Law Firms list 2025.',
-        bgImage: "/images/news-1.jpg"
+        subtitle: 'Lorem Ipsum is simply dummy text',
+        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.`,
+        bgImage: "/images/tower-bridge-view.jpg"
     },
     // Add more items as needed
     {
         title: 'Insight',
-        subtitle: 'LESSONS FROM THE CAPTAIN TOM FOUNDATION REPORT',
-        text: 'A report from the Charity Commission that details the unravelling of the Captain Tom Foundation, and repeated instances of mismanagement in its administration, offers a case study in how not to run a charity.',
-        bgImage: "/images/news-2.jpg"
+        subtitle: 'Lorem Ipsum is simply dummy text',
+        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.`,
+        bgImage: "/images/tower-bridge-view.jpg"
     },
     {
         title: 'Insight',
-        subtitle: 'BUDGET 2024: CHANGES FOR INDIVIDUALS AND TRUSTS',
-        text: 'Experts from our private client team have summarised the key changes from Labour’s Budget which affect both individuals and trusts, particularly regarding capital gains tax, inheritance tax, and the regime.',
-        bgImage: "/images/news-3.jpg"
+        subtitle: 'Lorem Ipsum is simply dummy text',
+        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.`,
+        bgImage: "/images/tower-bridge-view.jpg"
     },
     {
         title: 'Insight',
-        subtitle: 'COVID-19 VACCINE INFO',
-        text: 'Information regarding COVID-19 vaccine updates.',
-        bgImage: "/images/news-4.jpg"
+        subtitle: 'Lorem Ipsum is simply dummy text',
+        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type`,
+        bgImage: "/images/tower-bridge-view.jpg"
     }
 ];
 
@@ -41,8 +41,8 @@ const SecondSection: FC = () => {
                     <Col key={idx}>
                         <CardWrapper bgImage={item.bgImage}>
                             <Card.Body>
-                                <Card.Title style={{ fontWeight: 500, fontSize: '20px' }}>{item.title}</Card.Title>
-                                <Card.Title style={{ fontWeight: 500, fontSize: '16px' }}>
+                                <Card.Title style={{ fontWeight: 500, fontSize: '1.25rem' }}>{item.title}</Card.Title>
+                                <Card.Title style={{ fontWeight: 500, fontSize: '1rem' }}>
                                     {item.subtitle}
                                 </Card.Title>
 
@@ -68,8 +68,8 @@ export default SecondSection;
 
 const CardWrapper = styled(Card) <{ bgImage: string }>`
     position: relative;
-    min-height: 280px;
-    max-height: 280px;
+    min-height: 17.5rem;
+    max-height: 17.5rem;
     overflow: hidden;
     cursor: pointer;
     background-color:rgba(114, 114, 114, 0.619);
@@ -86,7 +86,7 @@ const CardWrapper = styled(Card) <{ bgImage: string }>`
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        filter: blur(4px);
+        filter: blur(.25rem);
         z-index: -1;
     }
     transition:0.2s;
