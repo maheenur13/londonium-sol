@@ -2,13 +2,13 @@ export interface HeaderItemProps {
     bgColor?: string;
     gridColumn: string;
     gridRow: string;
-    backImage?: string;
     hoverimage?: string;
     className?: string;
     title?: string;
     image?: string;
     bgImage?: string;
     position?: [string];
+    slug?: string;
 }
 
 export const galleryArray: HeaderItemProps[] = [
@@ -17,6 +17,7 @@ export const galleryArray: HeaderItemProps[] = [
         title: 'Family',
         gridColumn: '1',
         gridRow: '1',
+        slug: 'family',
         bgImage: '/images/bgImages/family.jpg',
     },
     {
@@ -33,6 +34,7 @@ export const galleryArray: HeaderItemProps[] = [
         bgImage: '/images/bgImages/medical-negligence.jpg',
         gridColumn: '2 / 3',
         gridRow: '1 / 3',
+        slug: 'medical-negligence',
     },
     {
         image: '/images/justice-shake.jpg',
@@ -47,6 +49,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridColumn: '2 / 4',
         gridRow: '4',
         bgImage: '/images/bgImages/personal-injury.jpg',
+        slug: 'personal-injury',
     },
     {
         image: '/images/tower-bridge-view.jpg',
@@ -66,6 +69,7 @@ export const galleryArray: HeaderItemProps[] = [
         title: 'Housing Legal Aid',
         gridColumn: '5 / 6',
         gridRow: '1 / 3',
+        slug: 'housing-legal-aid',
         bgImage: '/images/bgImages/housing-legal-aid.jpg',
     },
     {
@@ -85,6 +89,7 @@ export const galleryArray: HeaderItemProps[] = [
         className: 'service-view',
         gridColumn: '7 / 8',
         gridRow: '3 / 5',
+        slug: 'mental-health',
         bgImage: '/images/bgImages/mental-health.jpg',
     },
     {
@@ -92,6 +97,7 @@ export const galleryArray: HeaderItemProps[] = [
         className: 'service-view',
         gridColumn: '8 / 9',
         gridRow: '1 / 2',
+        slug: 'civil-litigation',
         bgImage: '/images/bgImages/civil-litigation.jpg',
     },
     {
@@ -119,6 +125,7 @@ export const galleryArray: HeaderItemProps[] = [
         title: 'Employment',
         gridColumn: '10 / 11',
         gridRow: '1 / 3',
+        slug: 'employment',
         bgImage: '/images/bgImages/employment.jpg',
     },
     {
@@ -126,6 +133,7 @@ export const galleryArray: HeaderItemProps[] = [
         title: 'Commercial Conveyancing',
         gridColumn: '9 / 11',
         gridRow: '3 / 5',
+        slug: 'commercial-conveyancing',
         bgImage: '/images/bgImages/commercial-conveyancing.jpg',
     },
 ];
