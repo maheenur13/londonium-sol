@@ -13,7 +13,7 @@ const rowSizes: RowSize[] = [
     { threshold: 2000, size: '9rem' },
     { threshold: 1700, size: '8.5rem' },
     { threshold: 1400, size: '7.5rem' },
-    { threshold: 1024, size: '6rem' },
+    { threshold: 1024, size: '6.5rem' },
     { threshold: 0, size: defaultRowSize }, // Default case
 ];
 
@@ -38,7 +38,7 @@ interface FontSizeConfig {
 const titleFontSizeConfig: FontSizeConfig = {
     minWidth: 320,
     maxWidth: 1024,
-    minSize: 1.5, // Minimum font size for title in rem
+    minSize: 1, // Minimum font size for title in rem
     maxSize: 2.5, // Maximum font size for title in rem
 };
 
@@ -51,18 +51,22 @@ const subtitleFontSizeConfig: FontSizeConfig = {
 
 const descriptionFontSizeConfig: FontSizeConfig = {
     minWidth: 320,
-    maxWidth: 1024,
-    minSize: 0.625, // Minimum font size for description in rem
-    maxSize: 1, // Maximum font size for description in rem
+    maxWidth: 1440,
+    minSize: 0.655, // Minimum font size for description in rem
+    maxSize: 0.875, // Maximum font size for description in rem
 };
 
+type FontType = 'title' | 'description' | 'subtitle';
 // Function to calculate responsive font size in rem
-const getResponsiveFontSize = (width: number, config: FontSizeConfig): string => {
+const getResponsiveFontSize = (width: number, config: FontSizeConfig, type: FontType): string => {
     const { minWidth, maxWidth, minSize, maxSize } = config;
-
+    let adjustment = type === 'description' ? 0.04 : type === 'subtitle' ? 0.15 : 0.1;
+    if (width <= 1200) {
+        adjustment = type === 'description' ? 0.01 : type === 'subtitle' ? 0.2 : 0.15;
+    }
     // If the width is greater than maxWidth, return the maxSize
     if (width > maxWidth) {
-        return `${maxSize}rem`;
+        return `${maxSize - adjustment}rem`;
     }
 
     // Clamp the width between minWidth and maxWidth
@@ -71,11 +75,12 @@ const getResponsiveFontSize = (width: number, config: FontSizeConfig): string =>
     // Calculate the font size based on the clamped width
     const fontSize = ((maxSize - minSize) / (maxWidth - minWidth)) * (maxWidth - clampedWidth) + minSize;
 
-    return `${fontSize}rem`; // Return the font size in rem
+    return `${fontSize - adjustment}rem`; // Return the font size in rem
 };
 
 // Example usage
-export const getTitleFontSize = (width: number): string => getResponsiveFontSize(width, titleFontSizeConfig);
-export const getSubtitleFontSize = (width: number): string => getResponsiveFontSize(width, subtitleFontSizeConfig);
+export const getTitleFontSize = (width: number): string => getResponsiveFontSize(width, titleFontSizeConfig, 'title');
+export const getSubtitleFontSize = (width: number): string =>
+    getResponsiveFontSize(width, subtitleFontSizeConfig, 'subtitle');
 export const getDescriptionFontSize = (width: number): string =>
-    getResponsiveFontSize(width, descriptionFontSizeConfig);
+    getResponsiveFontSize(width, descriptionFontSizeConfig, 'description');

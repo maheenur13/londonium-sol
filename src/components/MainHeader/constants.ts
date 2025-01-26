@@ -38,7 +38,7 @@ export const galleryArray: HeaderItemProps[] = [
         image: '/images/justice-shake.jpg',
         gridColumn: '2 / 4',
         gridRow: '3',
-        position: ['0 -60px'],
+        position: ['0 -45px'],
         className: 'image-view',
     },
     {

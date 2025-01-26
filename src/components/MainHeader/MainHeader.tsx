@@ -15,8 +15,6 @@ export const MainHeader: FC = () => {
 
     const subtitleFontSize = getSubtitleFontSize(width);
 
-    console.log({ subtitleFontSize });
-
 
 
 
@@ -76,16 +74,16 @@ export const MainHeader: FC = () => {
                         position={item.position}
                         hoverimage={bgImage}
                     >
-                        <p style={{ fontSize: descriptionFontSize }}>{!item?.image && !bgImage && item.title}</p>
+                        <p style={{ fontSize: descriptionFontSize, margin: 0 }}>{!item?.image && !bgImage && item.title}</p>
 
-                        <div className='hover-item'>
-                            {item?.bgImage && (
-                                <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
-                                    <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
-                                    <button style={{ fontSize: descriptionFontSize }} onClick={handleClaimClick}>Start Your Claim</button>
-                                </div>
-                            )}
-                        </div>
+                        {item?.bgImage ? <div className='hover-item'>
+
+                            <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
+                                <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
+                                <button style={{ fontSize: descriptionFontSize }} onClick={handleClaimClick}>{width <= 1200 ? "Start Claim" : `Start Your Claim`}</button>
+                            </div>
+
+                        </div> : ''}
 
                     </ImageWrapper>
                 ))}
@@ -242,8 +240,8 @@ const Wrapper = styled.div<{ hoverimage: string; width: number }>`
     grid-template-columns: repeat(10, 1fr) auto;
     grid-auto-rows: ${({ width }) => getRowSize(width)} ;
     transition: 0.5s;
-    background-image: url(${({ hoverimage }) => hoverimage});
-    transition: background-size 0.3s ease;
+    background-image: url(${({ hoverimage }) => hoverimage ? hoverimage : 'white'});
+    transition: background-image 0.3s;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
@@ -256,6 +254,7 @@ const Wrapper = styled.div<{ hoverimage: string; width: number }>`
 
     .active {
         .hover-item {
+            transition: 0.5s;
             position: relative;
             width: 100%;
             z-index: 99;
@@ -276,8 +275,10 @@ const Wrapper = styled.div<{ hoverimage: string; width: number }>`
     }
 
     .inactive {
+        transition: 0.5s;
         padding: 0.625rem;
         &:before {
+            transition: 0.5s;
             background-image: ${({ hoverimage }) => hoverimage && 'none'}!important;
         }
 
@@ -286,6 +287,7 @@ const Wrapper = styled.div<{ hoverimage: string; width: number }>`
     }
 
     .image-view {
+        transition: 0.5s;
         overflow: hidden;
 
         &:hover {
