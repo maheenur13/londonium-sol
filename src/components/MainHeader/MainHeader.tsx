@@ -8,10 +8,9 @@ import styled from 'styled-components';
 import { galleryArray, HeaderItemProps } from './constants';
 
 export const MainHeader: FC = () => {
-
     const { width } = useWindowSize();
 
-    const route = useRouter()
+    const route = useRouter();
 
     const descriptionFontSize = getDescriptionFontSize(width);
 
@@ -44,18 +43,21 @@ export const MainHeader: FC = () => {
         }
     };
 
-    const handleHoverOnImage = (item: any, index: number) => {
-
+    const handleHoverOnImage = (item: HeaderItemProps, index: number) => {
         setIsHoveredIndex(index);
+        // if (item.bgImage) {
+
         setBgImage(item?.bgImage);
+        // }
+
     };
 
     const handleItemClick = (item: HeaderItemProps) => {
         if (item.bgImage) {
-            route.push(`/services/${item.title}`)
+            route.push(`/services/${item.slug}`);
         }
-    }
-
+    };
+    // console.log({ bgImage });
 
     return (
         <div>
@@ -78,17 +80,22 @@ export const MainHeader: FC = () => {
                         hoverimage={bgImage}
                         onClick={() => handleItemClick(item)}
                     >
-                        <p style={{ fontSize: descriptionFontSize, margin: 0 }}>{!item?.image && !bgImage && item.title}</p>
+                        <p style={{ fontSize: descriptionFontSize, margin: 0 }}>
+                            {!item?.image && isHoveredIndex === null && item.title}
+                        </p>
 
-                        {item?.bgImage ? <div className='hover-item'>
-
-                            <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
-                                <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
-                                <button style={{ fontSize: descriptionFontSize }} onClick={handleClaimClick}>{width <= 1200 ? "Start Claim" : `Start Your Claim`}</button>
+                        {item?.bgImage ? (
+                            <div className='hover-item'>
+                                <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
+                                    <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
+                                    <button style={{ fontSize: descriptionFontSize }} onClick={handleClaimClick}>
+                                        {width <= 1200 ? 'Start Claim' : `Start Your Claim`}
+                                    </button>
+                                </div>
                             </div>
-
-                        </div> : ''}
-
+                        ) : (
+                            ''
+                        )}
                     </ImageWrapper>
                 ))}
             </Wrapper>
@@ -192,9 +199,11 @@ export const MainHeader: FC = () => {
     );
 };
 
-const ImageWrapper = styled.div<
-    Pick<HeaderItemProps, 'hoverimage' | 'gridColumn' | 'gridRow' | 'bgColor' | 'backImage' | 'position'>
->`
+type WrapperType = {
+    backImage?: string;
+} & Pick<HeaderItemProps, 'hoverimage' | 'gridColumn' | 'gridRow' | 'bgColor' | 'position'>;
+
+const ImageWrapper = styled.div<WrapperType>`
     position: relative;
     border: 4px solid white;
 
@@ -242,12 +251,12 @@ const Wrapper = styled.div<{ hoverimage: string; width: number }>`
     position: relative;
     display: grid;
     grid-template-columns: repeat(10, 1fr) auto;
-    grid-auto-rows: ${({ width }) => getRowSize(width)} ;
+    grid-auto-rows: ${({ width }) => getRowSize(width)};
     transition: 0.5s;
-    background-image: url(${({ hoverimage }) => hoverimage ? hoverimage : 'white'});
+    background-image: url(${({ hoverimage }) => (hoverimage ? hoverimage : 'white')});
     transition: background-image 0.3s;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
 
     div {
