@@ -1,0 +1,280 @@
+export const subServiceDetails = [
+    {
+        serviceId: 'civil-litigation',
+        services: [
+            {
+                id: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Expert legal representation in civil disputes.',
+                slug: 'litigation',
+            },
+            {
+                id: 'civil-litigation',
+                title: 'General Litigation',
+                description: 'Comprehensive support for various litigation matters.',
+                slug: 'general-litigation',
+            },
+            {
+                id: 'civil-litigation',
+                title: 'LANDLORDS & TENANTS: RESIDENTIAL',
+                description: 'Guidance on residential landlord-tenant disputes.',
+                slug: 'residential-litigation',
+            },
+            {
+                id: 'civil-litigation',
+                title: 'LANDLORD & TENANTS – COMMERCIAL',
+                description: 'Legal assistance for commercial landlord-tenant issues.',
+                slug: 'commercial-litigation',
+            },
+            {
+                id: 'civil-litigation',
+                title: 'PRIVATE CLIENT & PROBATE',
+                description: 'Support for estate planning and probate matters.',
+                slug: 'probate-litigation',
+            },
+            {
+                id: 'civil-litigation',
+                title: 'INSOLVENCY & BANKRUPCY',
+                description: 'Expert advice on insolvency and bankruptcy proceedings.',
+                slug: 'insolvency-bankruptcy-litigation',
+            },
+            {
+                id: 'civil-litigation',
+                title: 'MONEY CLAIMS & DEBT RECOVERY',
+                description: 'Effective strategies for recovering debts and claims.',
+                slug: 'money-claims-debt-litigation',
+            },
+        ],
+    },
+    {
+        serviceId: 'family-service',
+        services: [
+            {
+                serviceId: 'family-01',
+                title: 'Family and Children',
+                description: 'Dedicated legal support for your litigation needs.',
+                slug: 'family-children-service',
+            },
+            {
+                serviceId: 'family-02',
+                title: 'Divorce and Separation',
+                description: 'Professional representation in civil litigation cases.',
+                slug: 'divorce-separation',
+            },
+            {
+                serviceId: 'family-03',
+                title: 'Domestic Violence and Abuse: Understanding Your Rights Under English Law',
+                description: 'Skilled advocacy in various litigation scenarios.',
+                slug: 'violence-abuse',
+            },
+
+            {
+                serviceId: 'family-04',
+                title: 'Child Arrangements: Understanding Your Rights Under English Law',
+                description: 'Tailored legal solutions for your litigation challenges.',
+                slug: 'child-arrangements',
+            },
+            {
+                serviceId: 'family-05',
+                title: 'Financial Orders Following Divorce: Understanding Your Rights Under English Law.',
+                description: 'Financial Orders Following Divorce: Understanding Your Rights Under English Law.',
+                slug: 'financial-orders',
+            },
+            {
+                serviceId: 'family-06',
+                title: 'Capital Asset Division Following Divorce: Understanding Your Rights Under English Law',
+                description: 'Focused legal strategies for successful litigation outcomes.',
+                slug: 'litigation-focused-strategies',
+            },
+            {
+                serviceId: 'family-07',
+                title: 'Care Proceedings',
+                description: 'Your trusted partner in navigating litigation processes.',
+                slug: 'litigation-trusted-partner',
+            },
+        ],
+    },
+    {
+        serviceId: 'medical-negligence',
+        services: [
+            {
+                serviceId: 'mn-01',
+                title: 'MEDICAL NEGLIGENCE',
+                description: 'Expert legal guidance for medical negligence cases.',
+                slug: 'medical-negligence-expert-guidance',
+            },
+            {
+                serviceId: 'mn-02',
+                title: 'CATASTROPHIC INJURIES',
+                description: 'Comprehensive legal support for catastrophic injuries.',
+                slug: 'catastrophic-injuries-comprehensive-support',
+            },
+            {
+                serviceId: 'mn-03',
+                title: 'ANAESTHETIC INJURIES',
+                description: 'Specialized legal representation for anaesthetic injuries.',
+                slug: 'anaesthetic-injuries-specialized-representation',
+            },
+            {
+                serviceId: 'mn-04',
+                title: 'SURGICAL NEGLIGENCE',
+                description: 'Dedicated legal assistance for surgical negligence cases.',
+                slug: 'surgical-negligence-dedicated-assistance',
+            },
+            {
+                serviceId: 'mn-05',
+                title: 'MISSED, DELAYED, AND WRONGFUL DIAGNOSIS',
+                description: 'Proven legal strategies for missed, delayed, and wrongful diagnosis cases.',
+                slug: 'missed-delayed-wrongful-diagnosis-proven-strategies',
+            },
+            {
+                serviceId: 'mn-06',
+                title: 'BIRTH RELATED INJURIES',
+                description: 'Your trusted partner in navigating birth related injuries litigation.',
+                slug: 'birth-related-injuries-trusted-partner',
+            },
+            {
+                serviceId: 'mn-07',
+                title: 'GYNAECOLOGICAL INJURIES',
+                description: 'Focused legal support for gynaecological injuries cases.',
+                slug: 'gynaecological-injuries-focused-support',
+            },
+            {
+                serviceId: 'mn-08',
+                title: 'PRODUCT LIABILITY CLAIMS (MEDICAL DEVICES)',
+                description: 'Expert legal representation for product liability claims related to medical devices.',
+                slug: 'product-liability-claims-medical-devices',
+            },
+            {
+                serviceId: 'mn-09',
+                title: 'PLASTIC/COSMETIC SURGERY NEGLIGENCE',
+                description: 'Expert legal representation for plastic/cosmetic surgery negligence cases.',
+                slug: 'plastic-cosmetic-surgery-negligence',
+            },
+            {
+                serviceId: 'mn-10',
+                title: 'CONSENT TO TREATMENT',
+                description: 'Expert legal representation for consent to treatment cases.',
+                slug: 'consent-to-treatment',
+            },
+            {
+                serviceId: 'mn-11',
+                title: 'GP NEGLIGENCE',
+                description: 'Expert legal representation for GP negligence cases.',
+                slug: 'gp-negligence',
+            },
+            {
+                serviceId: 'mn-12',
+                title: 'DENTAL NEGLIGENCE',
+                description: 'Expert legal representation for dental negligence cases.',
+                slug: 'dental-negligence',
+            },
+        ],
+    },
+    {
+        serviceId: '',
+        services: [
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Comprehensive legal services for litigation cases.',
+                slug: 'litigation-comprehensive-services-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Dedicated support for your litigation needs.',
+                slug: 'litigation-dedicated-support-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Expert legal guidance through litigation processes.',
+                slug: 'litigation-expert-guidance-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Strategic representation for successful litigation.',
+                slug: 'litigation-strategic-representation-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Focused legal strategies for effective outcomes.',
+                slug: 'litigation-focused-strategies-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Your trusted partner in litigation matters.',
+                slug: 'litigation-trusted-partner-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Proven expertise in handling litigation cases.',
+                slug: 'litigation-proven-expertise',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Tailored legal solutions for your litigation challenges.',
+                slug: 'litigation-tailored-solutions-2',
+            },
+        ],
+    },
+    {
+        serviceId: '',
+        services: [
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Expert legal representation in civil disputes.',
+                slug: 'litigation-expert-representation-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Comprehensive support for various litigation matters.',
+                slug: 'litigation-comprehensive-support-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Dedicated legal assistance for your litigation journey.',
+                slug: 'litigation-dedicated-assistance-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Focused legal strategies for successful litigation outcomes.',
+                slug: 'litigation-focused-strategies-3',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Your advocate in navigating the litigation landscape.',
+                slug: 'litigation-advocate-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Proven strategies for effective litigation outcomes.',
+                slug: 'litigation-proven-strategies-2',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Expert guidance through complex litigation cases.',
+                slug: 'litigation-expert-guidance-3',
+            },
+            {
+                serviceId: 'civil-litigation',
+                title: 'Litigation',
+                description: 'Tailored legal solutions for your litigation challenges.',
+                slug: 'litigation-tailored-solutions-3',
+            },
+        ],
+    },
+];
