@@ -123,6 +123,8 @@ export const galleryArray: HeaderItemProps[] = [
         gridColumn: '8 / 9',
         gridRow: '4 / 5',
         bgImage: '/images/bgImages/crime.jpg',
+        slug: 'crime',
+        id: 'crime',
     },
     {
         image: '/images/court.jpg',

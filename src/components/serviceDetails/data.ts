@@ -371,4 +371,68 @@ export const subServiceDetails = [
             },
         ],
     },
+    {
+        serviceId: 'commercial-conveyancing',
+        services: [
+            {
+                id: 'cc-01',
+                title: 'COMMERCIAL CONVEYANCING',
+                description: 'Specialized legal assistance for commercial property transactions and disputes.',
+                slug: 'commercial-conveyancing-aid',
+            },
+        ],
+    },
+    {
+        serviceId: 'crime',
+        services: [
+            {
+                id: 'cr-01',
+                title: 'Criminal Defence',
+                description: 'Expert legal support for criminal cases.',
+                slug: 'criminal-defence',
+            },
+            {
+                id: 'cr-02',
+                title: 'POLICE STATION REPRESENTATION',
+                description: 'Legal representation at police stations.',
+                slug: 'police-rep',
+            },
+            {
+                id: 'cr-03',
+                title: 'COURT REPRESENTATION',
+                description: 'Professional court representation services.',
+                slug: 'court-rep',
+            },
+            {
+                id: 'cr-04',
+                title: 'Serious Crime Defence',
+                description: 'Specialized defence for serious crimes.',
+                slug: 'serious-crime',
+            },
+            {
+                id: 'cr-05',
+                title: 'ROAD TRAFFIC OFFENCES',
+                description: 'Legal assistance for road traffic violations.',
+                slug: 'traffic-offences',
+            },
+            {
+                id: 'cr-06',
+                title: 'APPEALS',
+                description: 'Expert legal support for appeals.',
+                slug: 'appeals',
+            },
+            {
+                id: 'cr-07',
+                title: 'ACTION AGAINST THE POLICE',
+                description: 'Legal action against police misconduct.',
+                slug: 'police-action',
+            },
+            {
+                id: 'cr-08',
+                title: 'Guiding Principles',
+                description: 'Guiding principles for legal proceedings.',
+                slug: 'guiding-principles',
+            },
+        ],
+    },
 ];
