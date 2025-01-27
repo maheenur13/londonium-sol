@@ -1,11 +1,15 @@
+import { subServiceDetails } from '@components/serviceDetails/data'
+import { useRouter } from 'next/router'
 import { FC } from 'react'
 import GoogleDocContent from 'services/GoogelDocContent'
 
 const SubService: FC = () => {
+    const router = useRouter()
+    const subService = [...subServiceDetails].find((itm) => itm.serviceId === (router.query?.serviceName as string))?.services.find((item) => item.slug === router.query.subServiceName)
+
     return (
         <div>
-
-            <GoogleDocContent url='https://docs.google.com/document/d/1_bpiizuhKUmcmuTH8J_NTCzIPLjMvWto/preview' />
+            {subService?.fileId && <GoogleDocContent url={`https://docs.google.com/document/d/${subService?.fileId}/preview`} />}
         </div>
     )
 }
