@@ -9,6 +9,7 @@ export interface HeaderItemProps {
     bgImage?: string;
     position?: [string];
     slug?: string;
+    id?: string;
 }
 
 export const galleryArray: HeaderItemProps[] = [
@@ -17,8 +18,9 @@ export const galleryArray: HeaderItemProps[] = [
         title: 'Family',
         gridColumn: '1',
         gridRow: '1',
-        slug: 'family',
+        slug: 'family-service',
         bgImage: '/images/bgImages/family.jpg',
+        id: 'family-service',
     },
     {
         image: '/images/big-ben-tower.jpg',
@@ -26,6 +28,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '2 / 5',
         position: ['-20px 0'],
         className: 'image-view',
+        // id:''
     },
     {
         className: 'service-view',
@@ -35,6 +38,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridColumn: '2 / 3',
         gridRow: '1 / 3',
         slug: 'medical-negligence',
+        id: 'medical-negligence',
     },
     {
         image: '/images/justice-shake.jpg',
@@ -50,6 +54,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '4',
         bgImage: '/images/bgImages/personal-injury.jpg',
         slug: 'personal-injury',
+        id: 'personal-injury',
     },
     {
         image: '/images/tower-bridge-view.jpg',
@@ -63,6 +68,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridColumn: '4 / 5',
         gridRow: '3 / 5',
         bgImage: '/images/bgImages/immigration.jpg',
+        id: 'immigration',
     },
     {
         className: 'service-view',
@@ -71,6 +77,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '1 / 3',
         slug: 'housing-legal-aid',
         bgImage: '/images/bgImages/housing-legal-aid.jpg',
+        id: 'housing-legal-aid',
     },
     {
         image: '/images/london-city.jpg',
@@ -91,6 +98,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '3 / 5',
         slug: 'mental-health',
         bgImage: '/images/bgImages/mental-health.jpg',
+        id: 'mental-aid',
     },
     {
         title: 'Civil Litigation',
@@ -99,6 +107,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '1 / 2',
         slug: 'civil-litigation',
         bgImage: '/images/bgImages/civil-litigation.jpg',
+        id: 'civil-litigation',
     },
     {
         image: '/images/justice-statue.jpg',
@@ -127,6 +136,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '1 / 3',
         slug: 'employment',
         bgImage: '/images/bgImages/employment.jpg',
+        id: 'employment',
     },
     {
         className: 'service-view',
@@ -135,5 +145,6 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '3 / 5',
         slug: 'commercial-conveyancing',
         bgImage: '/images/bgImages/commercial-conveyancing.jpg',
+        id: 'commercial-conveyancing',
     },
 ];
