@@ -69,6 +69,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '3 / 5',
         bgImage: '/images/bgImages/immigration.jpg',
         id: 'immigration',
+        slug: 'immigration',
     },
     {
         className: 'service-view',

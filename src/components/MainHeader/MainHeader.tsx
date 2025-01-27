@@ -49,7 +49,6 @@ export const MainHeader: FC = () => {
 
         setBgImage(item?.bgImage);
         // }
-
     };
 
     const handleItemClick = (item: HeaderItemProps) => {
@@ -88,11 +87,13 @@ export const MainHeader: FC = () => {
                             <div className='hover-item'>
                                 <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
                                     <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
-                                    <button style={{ fontSize: descriptionFontSize }} onClick={(event) => {
-                                        event.stopPropagation();
-                                        handleClaimClick()
-                                    }}>
-
+                                    <button
+                                        style={{ fontSize: descriptionFontSize }}
+                                        onClick={(event) => {
+                                            event.stopPropagation();
+                                            handleClaimClick();
+                                        }}
+                                    >
                                         {width <= 1200 ? 'Start Claim' : `Start Your Claim`}
                                     </button>
                                 </div>
