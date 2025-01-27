@@ -23,7 +23,7 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
                 <ImageWrapper>
                     <CenterItemsWrapper>
                         <Title>{serviceDetails?.title}</Title>
-                        <Button size='lg'>Start Claim Now</Button>
+                        <Button style={{ background: '#161616', border: '1px solid #636363' }} size='lg'>Start Claim Now</Button>
                     </CenterItemsWrapper>
 
                     <div>
