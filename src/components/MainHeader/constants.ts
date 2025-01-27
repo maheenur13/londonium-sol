@@ -99,7 +99,7 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '3 / 5',
         slug: 'mental-health',
         bgImage: '/images/bgImages/mental-health.jpg',
-        id: 'mental-aid',
+        id: 'mental-health',
     },
     {
         title: 'Civil Litigation',

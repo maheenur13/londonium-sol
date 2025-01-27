@@ -283,4 +283,92 @@ export const subServiceDetails = [
             },
         ],
     },
+    {
+        serviceId: 'employment',
+        services: [
+            {
+                id: 'em-01',
+                title: 'EMPLOYMENT',
+                description: 'Comprehensive legal guidance for employment-related issues.',
+                slug: 'employment-law',
+            },
+        ],
+    },
+    {
+        serviceId: 'mental-health',
+        services: [
+            {
+                id: 'mh-01',
+                title: 'Mental Health',
+                description: 'Expert legal guidance for mental health issues.',
+                slug: 'mental-health-aid',
+            },
+            {
+                id: 'mh-02',
+                title: 'Mental Health Detention',
+                description: 'Legal support for mental health detention under Sections 2 and 3.',
+                slug: 'mental-detention',
+            },
+            {
+                id: 'mh-03',
+                title: 'Section 7 Guardianship',
+                description: 'Understanding rights under Section 7 Guardianship.',
+                slug: 'section-7',
+            },
+            {
+                id: 'mh-04',
+                title: 'Section 17A Orders',
+                description: 'Legal guidance for Section 17A Community Treatment Orders.',
+                slug: 'section-17a',
+            },
+            {
+                id: 'mh-05',
+                title: 'Section 37 Powers',
+                description: 'Understanding Section 37 Powers of Courts for Hospital Admission or Guardianship.',
+                slug: 'section-37',
+            },
+            {
+                id: 'mh-06',
+                title: 'Mental Health Rights',
+                description: 'Understanding rights under Sections 38, 41(5), 45A, and 48.',
+                slug: 'mental-rights',
+            },
+            {
+                id: 'mh-07',
+                title: 'Guardianship Orders',
+                description: 'Understanding rights under Section 7 Guardianship Orders.',
+                slug: 'guardianship',
+            },
+            {
+                id: 'mh-08',
+                title: 'Challenging Detention',
+                description: 'Legal support for challenging detention in hospital.',
+                slug: 'challenging-detention',
+            },
+            {
+                id: 'mh-09',
+                title: 'Hospital Orders',
+                description: 'Legal guidance for hospital orders.',
+                slug: 'hospital-orders',
+            },
+            {
+                id: 'mh-10',
+                title: 'Community Treatment',
+                description: 'Legal support for Community Treatment Orders (CTO).',
+                slug: 'community-treatment',
+            },
+            {
+                id: 'mh-11',
+                title: 'Prison Transfers',
+                description: 'Legal guidance for prison transfers under Section 47.',
+                slug: 'prison-transfers',
+            },
+            {
+                id: 'mh-12',
+                title: 'Legal Aid Funding',
+                description: 'Funding options for legal cases.',
+                slug: 'legal-aid',
+            },
+        ],
+    },
 ];
