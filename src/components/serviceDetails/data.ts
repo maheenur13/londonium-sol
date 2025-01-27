@@ -178,7 +178,7 @@ export const subServiceDetails = [
                 id: 'pi-01',
                 title: 'PERSONAL INJURY',
                 description: 'Expert legal representation for personal injury cases.',
-                slug: 'personal-injury',
+                slug: 'personal-injury-aid',
             },
             {
                 id: 'pi-02',
