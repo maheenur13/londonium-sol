@@ -5,7 +5,7 @@ import GoogleDocContent from 'services/GoogelDocContent'
 
 const SubService: FC = () => {
     const router = useRouter()
-    const subService = [...subServiceDetails].find((itm) => itm.serviceId === (router.query?.serviceName as string))?.services.find((item) => item.slug === router.query.subServiceName)
+    const subService = [...subServiceDetails].find((itm) => itm.serviceId === (router.query?.serviceName as string))?.services.find((item) => item.slug === router.query.subServiceName);
 
     return (
         <div>
