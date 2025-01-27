@@ -88,7 +88,11 @@ export const MainHeader: FC = () => {
                             <div className='hover-item'>
                                 <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
                                     <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
-                                    <button style={{ fontSize: descriptionFontSize }} onClick={handleClaimClick}>
+                                    <button style={{ fontSize: descriptionFontSize }} onClick={(event) => {
+                                        event.stopPropagation();
+                                        handleClaimClick()
+                                    }}>
+
                                         {width <= 1200 ? 'Start Claim' : `Start Your Claim`}
                                     </button>
                                 </div>
@@ -206,7 +210,7 @@ type WrapperType = {
 const ImageWrapper = styled.div<WrapperType>`
     position: relative;
     border: 4px solid white;
-
+    cursor: pointer;
     grid-column: ${(props) => props.gridColumn};
     grid-row: ${(props) => props.gridRow};
 
