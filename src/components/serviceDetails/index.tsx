@@ -54,7 +54,7 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
                         >
                             {/* <Card.Header>Header</Card.Header> */}
                             <Card.Body>
-                                <Card.Title >{item.title.toLowerCase().split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</Card.Title>
+                                <Card.Title >{item?.title?.toLowerCase().split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</Card.Title>
                                 <Card.Text>
                                     {item.description}
                                 </Card.Text>
