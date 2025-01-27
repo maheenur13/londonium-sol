@@ -19,6 +19,8 @@ export const MainHeader: FC = () => {
     const [bgImage, setBgImage] = useState<any>(null);
     const [isHoveredIndex, setIsHoveredIndex] = useState<any>(null);
 
+    const [isHoveredOnImage, setIsHoveredOnImage] = useState<boolean>(true)
+
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const { formData, errors, handleChange, validateForm, setFormData, setErrors } = useForm({
         name: '',
@@ -43,12 +45,16 @@ export const MainHeader: FC = () => {
         }
     };
 
+
     const handleHoverOnImage = (item: HeaderItemProps, index: number) => {
+
+        if (!item.image) {
+            setIsHoveredOnImage(false)
+        }
         setIsHoveredIndex(index);
-        // if (item.bgImage) {
 
         setBgImage(item?.bgImage);
-        // }
+
     };
 
     const handleItemClick = (item: HeaderItemProps) => {
@@ -56,7 +62,6 @@ export const MainHeader: FC = () => {
             route.push(`/services/${item.slug}`);
         }
     };
-    // console.log({ bgImage });
 
     return (
         <div>
@@ -66,6 +71,7 @@ export const MainHeader: FC = () => {
                         onMouseLeave={() => {
                             setIsHoveredIndex(null);
                             setBgImage(null);
+                            setIsHoveredOnImage(true)
                         }}
                         className={`${item.className} item-${idx} ${isHoveredIndex === idx && item.className !== 'image-view' ? 'active' : 'inactive'
                             }`}
@@ -80,7 +86,7 @@ export const MainHeader: FC = () => {
                         onClick={() => handleItemClick(item)}
                     >
                         <p style={{ fontSize: descriptionFontSize, margin: 0 }}>
-                            {!item?.image && isHoveredIndex === null && item.title}
+                            {!item?.image && isHoveredOnImage && item.title}
                         </p>
 
                         {item?.bgImage ? (
