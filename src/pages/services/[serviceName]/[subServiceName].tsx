@@ -14,4 +14,4 @@ const SubService: FC = () => {
     )
 }
 
-export default SubService
+export default SubService;
