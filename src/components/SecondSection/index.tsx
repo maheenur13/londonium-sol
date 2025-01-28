@@ -5,29 +5,28 @@ import styled from 'styled-components';
 
 const items = [
     {
-        title: 'Latest News',
-        subtitle: 'Lorem Ipsum is simply dummy text',
-        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.`,
-        bgImage: "/images/tower-bridge-view.jpg"
-    },
-    // Add more items as needed
-    {
-        title: 'Insight',
-        subtitle: 'Lorem Ipsum is simply dummy text',
-        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.`,
-        bgImage: "/images/tower-bridge-view.jpg"
+        title: 'News',
+        subtitle: 'New updates on the way',
+        text: `Stay informed about current events with the latest news and updates. Our team of experts curates the most relevant and up-to-date information to keep you in the loop.`,
+        bgImage: "/images/london-city.jpg"
     },
     {
         title: 'Insight',
-        subtitle: 'Lorem Ipsum is simply dummy text',
-        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.`,
-        bgImage: "/images/tower-bridge-view.jpg"
+        subtitle: 'Deep dive into the topic',
+        text: `Gain a deeper understanding of the topic with detailed insights. Our in-depth analysis and comprehensive coverage will provide you with a comprehensive understanding of the subject.`,
+        bgImage: "/images/legal-consult.jpg"
     },
     {
-        title: 'Insight',
-        subtitle: 'Lorem Ipsum is simply dummy text',
-        text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type`,
-        bgImage: "/images/tower-bridge-view.jpg"
+        title: 'Analysis',
+        subtitle: 'In-depth analysis of the subject',
+        text: `Uncover patterns and trends with in-depth analysis of the subject. Our team of experts will provide you with a detailed analysis of the subject, helping you to stay ahead of the curve.`,
+        bgImage: "/images/big-ben-tower.jpg"
+    },
+    {
+        title: 'Trends',
+        subtitle: 'Current and future trends',
+        text: `Stay ahead with knowledge of current and future trends. Our team of experts will keep you updated on the latest trends, helping you to make informed decisions.`,
+        bgImage: "/images/justice-shake.jpg"
     }
 ];
 
@@ -72,7 +71,7 @@ const CardWrapper = styled(Card) <{ bgImage: string }>`
     max-height: 17.5rem;
     overflow: hidden;
     cursor: pointer;
-    background-color:rgba(114, 114, 114, 0.619);
+    background-color:rgba(42, 42, 42, 0.619);
 
     &::before {
         
