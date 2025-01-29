@@ -4,9 +4,9 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import { toast, ToastContainer } from 'react-toastify';
 import styled from 'styled-components';
 
-// const SERVICE_ID = 'contact_service';
-// const PUBLIC_KEY = '7m8Nz43ks3yajydpk';
-// const TEMPLATE_ID = 'contact_form';
+const SERVICE_ID = 'contact_service';
+const PUBLIC_KEY = '7m8Nz43ks3yajydpk';
+const TEMPLATE_ID = 'contact_form';
 
 const emailInfo = {
     medical_negligence: 'medi.neg@londoniumsolicitors.co.uk',
@@ -35,6 +35,8 @@ type DepartmentKey =
     | 'employment';
 
 export const Contact: FC = () => {
+    console.log(process.env.TEMPLATE_ID);
+
     const [formElement, setFormElement] = useState<HTMLFormElement | null>();
 
     const [validated, setValidated] = useState<boolean>(false);
@@ -72,10 +74,10 @@ export const Contact: FC = () => {
     const sendToEmailJs = async (data: any) => {
         try {
             const response = await emailjs.send(
-                process.env.SERVICE_ID as string,
-                process.env.TEMPLATE_ID as string,
+                SERVICE_ID,
+                TEMPLATE_ID,
                 { ...data },
-                process.env.PUBLIC_KEY as string
+                PUBLIC_KEY
             );
             if (response.status === 200) {
                 toast('Your enquiry submitted!', {
