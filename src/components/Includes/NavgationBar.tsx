@@ -1,11 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import { ChangeEvent, ChangeEventHandler, FC, useState } from 'react';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import styled from 'styled-components';
 import { navItems } from './constants';
 
 export const NavigationBar: FC = () => {
+
+    const [searchText, setSearchText] = useState<string | null>(null);
+    const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchText(event.target.value);
+    }
     return (
         <>
             <NavbarWrapper key='big' expand='md' className='mb-3 px-3'>
@@ -25,9 +30,9 @@ export const NavigationBar: FC = () => {
                         <Offcanvas.Body>
                             <Nav className='justify-content-center flex-grow-1 pe-3 '>
                                 <SearchBox>
-                                    <input placeholder='Search' />
+                                    <input placeholder='Search' onChange={handleInputChange} />
                                     <Image src='/svg/mic.svg' width={26} height={22} alt='logo' />
-                                    <BgImage src='/svg/search.svg' width={18} height={18} alt='logo' />
+                                    {!searchText && <BgImage src='/svg/search.svg' width={16} height={16} alt='logo' />}
                                 </SearchBox>
                                 {/* <Form className='d-flex'>
                                 <Form.Control type='search' placeholder='Search' className='me-2' aria-label='Search' />
