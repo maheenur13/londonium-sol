@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Swal from 'sweetalert2';
 
 const SERVICE_ID = 'contact_service';
-const PUBLIC_KEY = '7m8Nz43ks3yajydpk';
+const PUBLIC_KEY = '2SUAJnVFgpoi5lKDg';
 const TEMPLATE_ID = 'contact_form';
 
 const emailInfo = {
