@@ -1,8 +1,8 @@
 import emailjs from '@emailjs/browser';
 import { FC, useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { toast, ToastContainer } from 'react-toastify';
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
 
 const SERVICE_ID = 'contact_service';
 const PUBLIC_KEY = '7m8Nz43ks3yajydpk';
@@ -35,7 +35,7 @@ type DepartmentKey =
     | 'employment';
 
 export const Contact: FC = () => {
-    console.log(process.env.TEMPLATE_ID);
+
 
     const [formElement, setFormElement] = useState<HTMLFormElement | null>();
 
@@ -43,52 +43,63 @@ export const Contact: FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     const handleSubmit = (event: any) => {
+
+        const form = event.currentTarget;
+        console.log({ form });
         setLoading(true);
         event.preventDefault();
+        event.stopPropagation();
+        if (form.checkValidity()) {
+            const formData: { [key: string]: any } = {}; // Define formData type
 
-        const formData: { [key: string]: any } = {}; // Define formData type
+            const formElements = event.target.elements;
+            Array.from(formElements).forEach((element: any) => {
+                if (element.name) {
+                    formData[element.name] = element.value;
+                }
+            });
 
-        const formElements = event.target.elements;
-        Array.from(formElements).forEach((element: any) => {
-            if (element.name) {
-                formData[element.name] = element.value;
-            }
-        });
+            // Use type assertion for department
+            const department = formData['department'] as DepartmentKey;
 
-        // Use type assertion for department
-        const department = formData['department'] as DepartmentKey;
+            // Access emailInfo safely
+            const depEmail = emailInfo[department];
 
-        // Access emailInfo safely
-        const depEmail = emailInfo[department];
+            // Send data
+            sendToEmailJs({
+                ...formData,
+                dep_email: depEmail,
+            });
+            setValidated(false);
+            console.log('Form Data:', formData);
+        } else {
+            setLoading(false)
+            setValidated(true);
+        }
 
-        // Send data
-        sendToEmailJs({
-            ...formData,
-            dep_email: depEmail,
-        });
 
-        console.log('Form Data:', formData);
-        setValidated(false);
     };
 
     const sendToEmailJs = async (data: any) => {
         try {
-            const response = await emailjs.send(
-                SERVICE_ID,
-                TEMPLATE_ID,
-                { ...data },
-                PUBLIC_KEY
-            );
+            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, { ...data }, PUBLIC_KEY);
             if (response.status === 200) {
-                toast('Your enquiry submitted!', {
-                    type: 'success',
+                Swal.fire({
+                    title: "Message Sent",
+                    icon: "success",
+                    timer: 3000,
+                    text: "Thank you for reaching out! We have received your message and will get back to you shortly."
                 });
                 formElement?.reset();
             }
         } catch (error: any) {
-            toast(error, {
-                type: 'error',
+            Swal.fire({
+                title: "Something went wrong!",
+                icon: "error",
+                timer: 3000,
+                text: String(error)
             });
+            setLoading(false);
         } finally {
             setLoading(false);
         }
@@ -96,7 +107,6 @@ export const Contact: FC = () => {
 
     return (
         <FormWrapper>
-            <ToastContainer />
             <div className='my-3'>
                 <p className='m-0' style={{ color: '#6D6D6D', fontSize: '1.2rem' }}>
                     Londonium Solicitors
@@ -161,6 +171,7 @@ export const Contact: FC = () => {
                     SUBMIT
                 </Button>
             </Form>
+
         </FormWrapper>
     );
 };

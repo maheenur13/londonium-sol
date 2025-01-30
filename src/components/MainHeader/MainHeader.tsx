@@ -19,26 +19,21 @@ export const MainHeader: FC = () => {
     const [bgImage, setBgImage] = useState<any>(null);
     const [isHoveredIndex, setIsHoveredIndex] = useState<any>(null);
 
-    const [isHoveredOnImage, setIsHoveredOnImage] = useState<boolean>(true)
+    const [isHoveredOnImage, setIsHoveredOnImage] = useState<boolean>(true);
 
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
 
     const handleClaimClick = () => {
         setIsModalOpen(true);
     };
 
-
-
     const handleHoverOnImage = (item: HeaderItemProps, index: number) => {
-
         if (!item.image) {
-            setIsHoveredOnImage(false)
+            setIsHoveredOnImage(false);
         }
         setIsHoveredIndex(index);
 
         setBgImage(item?.bgImage);
-
     };
 
     const handleItemClick = (item: HeaderItemProps) => {
@@ -55,7 +50,7 @@ export const MainHeader: FC = () => {
                         onMouseLeave={() => {
                             setIsHoveredIndex(null);
                             setBgImage(null);
-                            setIsHoveredOnImage(true)
+                            setIsHoveredOnImage(true);
                         }}
                         className={`${item.className} item-${idx} ${isHoveredIndex === idx && item.className !== 'image-view' ? 'active' : 'inactive'
                             }`}
@@ -116,7 +111,7 @@ const ImageWrapper = styled.div<WrapperType>`
     cursor: pointer;
     grid-column: ${(props) => props.gridColumn};
     grid-row: ${(props) => props.gridRow};
-
+    /* transition: 0.6s; */
     &:before {
         transition: 0.6s;
         position: absolute;
@@ -125,7 +120,7 @@ const ImageWrapper = styled.div<WrapperType>`
         top: 0;
         width: 100%;
         height: 100%;
-        background-image: url(${({ backImage }) => backImage}) !important;
+        background-image: url(${({ backImage }) => `${backImage}`}) !important;
         background-position: ${({ position }) => position};
         background-repeat: no-repeat;
         background-size: cover;
@@ -159,9 +154,9 @@ const Wrapper = styled.div<{ hoverimage: string; width: number }>`
     display: grid;
     grid-template-columns: repeat(10, 1fr) auto;
     grid-auto-rows: ${({ width }) => getRowSize(width)};
-    transition: 0.5s;
-    background-image: url(${({ hoverimage }) => (hoverimage ? hoverimage : 'white')});
-    transition: background-image 0.3s;
+    /* transition: 0.5s; */
+    background-image: url(${({ hoverimage }) => (hoverimage ? hoverimage : '/images/white-bg.jpg')});
+    /* transition: background-image 0.3s; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
