@@ -13,7 +13,7 @@ export const NavigationBar: FC = () => {
     }
     return (
         <>
-            <NavbarWrapper key='big' expand='md' className='mb-3 px-3'>
+            <NavbarWrapper key='big' expand='lg' className='mb-3 px-3'>
                 <Container fluid>
                     <Navbar.Brand href='/'>
                         <Image src='/images/main-logo.png' width={191} height={40} alt='main-logo' />

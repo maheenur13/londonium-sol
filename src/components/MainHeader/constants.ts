@@ -28,7 +28,6 @@ export const galleryArray: HeaderItemProps[] = [
         gridRow: '2 / 5',
         position: ['-20px 0'],
         className: 'image-view',
-        // id:''
     },
     {
         className: 'service-view',
