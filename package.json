@@ -26,6 +26,7 @@
         "react-sweetalert2": "^0.6.0",
         "sass": "^1.62.0",
         "styled-components": "^5.3.9",
+        "swiper": "^11.2.2",
         "typescript": "5.0.4"
     },
     "devDependencies": {
