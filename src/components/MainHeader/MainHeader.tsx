@@ -42,6 +42,10 @@ export const MainHeader: FC = () => {
         }
     };
 
+    const handleSuccess = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div>
             <Wrapper width={width} hoverimage={bgImage} className='wrapper  mx-4'>
@@ -52,8 +56,9 @@ export const MainHeader: FC = () => {
                             setBgImage(null);
                             setIsHoveredOnImage(true);
                         }}
-                        className={`${item.className} item-${idx} ${isHoveredIndex === idx && item.className !== 'image-view' ? 'active' : 'inactive'
-                            }`}
+                        className={`${item.className} item-${idx} ${
+                            isHoveredIndex === idx && item.className !== 'image-view' ? 'active' : 'inactive'
+                        }`}
                         onMouseEnter={() => handleHoverOnImage(item, idx)}
                         backImage={item?.image}
                         gridColumn={item.gridColumn}
@@ -94,7 +99,7 @@ export const MainHeader: FC = () => {
                     <Modal.Title>Start your claim</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <ServiceForm />
+                    <ServiceForm handleSuccess={handleSuccess} />
                 </Modal.Body>
             </Modal>
         </div>
