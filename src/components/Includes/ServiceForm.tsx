@@ -1,30 +1,52 @@
 import useForm from 'hooks/useForm';
-import { Button, Form } from 'react-bootstrap';
+import { FC, useState } from 'react';
+import { Button, Form, Spinner } from 'react-bootstrap';
+import { sendToEmailJs } from 'services/emailService';
+import { emailInfo } from 'services/serviceConstants';
 
-const ServiceForm = () => {
+type PropsType = {
+    handleSuccess?: () => void;
+};
+
+const ServiceForm: FC<PropsType> = ({ handleSuccess }) => {
+    const [loading, setLoading] = useState<boolean>(false);
 
     const { formData, errors, handleChange, validateForm, setFormData, setErrors } = useForm({
         name: '',
         email: '',
         message: '',
         phone: '',
-        category: '',
+        department: '',
     });
 
-
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        setLoading(true);
         e.preventDefault();
         if (validateForm()) {
-            // Handle form submission
+            console.log({ formData });
+            const { email, ...restData } = formData;
 
-            // Reset form
-            setFormData({ name: '', email: '', message: '', phone: '', category: '' });
-            setErrors({ name: '', email: '', message: '', phone: '', category: '' });
+            const depEmail = emailInfo[restData.department as keyof typeof emailInfo];
+
+            const newFormData = {
+                ...restData,
+                reply_to: email,
+            };
+
+            const isSuccess = await sendToEmailJs({
+                ...newFormData,
+                dep_email: depEmail,
+            });
+
+            if (isSuccess && handleSuccess) {
+                handleSuccess();
+            }
         }
+        setLoading(false);
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form noValidate onSubmit={handleSubmit}>
             <Form.Group controlId='formName'>
                 <Form.Label>Name</Form.Label>
                 <Form.Control
@@ -65,23 +87,24 @@ const ServiceForm = () => {
                 <Form.Label>Choose a Department</Form.Label>
                 <Form.Control
                     as='select'
-                    name='category'
-                    value={formData.category}
+                    name='department'
+                    value={formData.department}
                     onChange={handleChange}
-                    isInvalid={!!errors.category}
+                    isInvalid={!!errors.department}
                 >
                     <option value=''>Select...</option>
-                    <option value='Medical Negligence'>Medical Negligence</option>
-                    <option value='Civil Litigation'>Civil Litigation</option>
-                    <option value='Employment'>Employment</option>
-                    <option value='Family'>Family</option>
-                    <option value='Housing Legal Aid'>Housing Legal Aid</option>
-                    <option value='Personal Injury'>Personal Injury</option>
-                    <option value='Mental Health'>Mental Health</option>
-                    <option value='Crime'>Crime</option>
-                    <option value='Commercial Conveyancing'>Commercial Conveyancing</option>
+                    <option value='general_enquiries'>General Enquiries</option>
+                    <option value='medical_negligence'>Medical Negligence</option>
+                    <option value='civil_litigation'>Civil Litigation</option>
+                    <option value='employment'>Employment</option>
+                    <option value='family'>Family</option>
+                    <option value='housing_legal_aid'>Housing Legal Aid</option>
+                    <option value='personal_injury'>Personal Injury</option>
+                    <option value='mental_health'>Mental Health</option>
+                    <option value='crime'>Crime</option>
+                    <option value='commercial_conveyancing'>Commercial Conveyancing</option>
                 </Form.Control>
-                <Form.Control.Feedback type='invalid'>{errors.category}</Form.Control.Feedback>
+                <Form.Control.Feedback type='invalid'>{errors.department}</Form.Control.Feedback>
             </Form.Group>
             <Form.Group className='mt-3' controlId='formMessage'>
                 <Form.Label>Message</Form.Label>
@@ -99,6 +122,7 @@ const ServiceForm = () => {
 
             <div className='text-center'>
                 <Button
+                    disabled={loading}
                     style={{
                         width: '200px',
                         backgroundColor: '#f0f0f0',
@@ -109,11 +133,17 @@ const ServiceForm = () => {
                     variant='primary'
                     type='submit'
                 >
-                    Submit
+                    {loading ? (
+                        <>
+                            <Spinner as='span' animation='grow' size='sm' role='status' aria-hidden='true' /> loading
+                        </>
+                    ) : (
+                        'Submit'
+                    )}
                 </Button>
             </div>
         </Form>
-    )
-}
+    );
+};
 
-export default ServiceForm
+export default ServiceForm;
