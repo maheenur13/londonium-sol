@@ -1,21 +1,30 @@
+import ServiceForm from '@components/Includes/ServiceForm';
 import { galleryArray } from '@components/MainHeader/constants';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { FC, useState } from 'react';
+import { Button, Card, Modal } from 'react-bootstrap';
 import styled from 'styled-components';
 import { subServiceDetails } from './data';
 
 type PropsType = {
     serviceName: string;
-}
+};
 
 const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-    const serviceDetails = galleryArray.find((itm) => itm.slug === (serviceName));
+    const serviceDetails = galleryArray.find((itm) => itm.slug === serviceName);
 
     const subServices = subServiceDetails.find((itm) => itm.serviceId === serviceDetails?.id);
-    // console.log({ subServices });
+
+    const handleClaimClick = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleSuccess = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <div>
@@ -23,7 +32,13 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
                 <ImageWrapper>
                     <CenterItemsWrapper>
                         <Title>{serviceDetails?.title}</Title>
-                        <Button style={{ background: '#161616', border: '1px solid #636363' }} size='lg'>Start Claim Now</Button>
+                        <Button
+                            onClick={handleClaimClick}
+                            style={{ background: '#161616', border: '1px solid #636363' }}
+                            size='lg'
+                        >
+                            Start Claim Now
+                        </Button>
                     </CenterItemsWrapper>
 
                     <div>
@@ -42,11 +57,14 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
             </ContentWrapper>
             <ServiceContainer>
                 {subServices?.services.map((item) => (
-                    <Link style={{
-                        textDecoration: 'none'
-                    }} href={`/services/${serviceName}/${item.slug}`} key={item.title}>
+                    <Link
+                        style={{
+                            textDecoration: 'none',
+                        }}
+                        href={`/services/${serviceName}/${item.slug}`}
+                        key={item.title}
+                    >
                         <Card
-
                             bg={'light'}
                             text={'dark'}
                             style={{ width: '100%', height: '100%', overflow: 'hidden' }}
@@ -54,22 +72,33 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
                         >
                             {/* <Card.Header>Header</Card.Header> */}
                             <Card.Body>
-                                <Card.Title >{item?.title?.toLowerCase().split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</Card.Title>
-                                <Card.Text>
-                                    {item.description}
-                                </Card.Text>
+                                <Card.Title>
+                                    {item?.title
+                                        ?.toLowerCase()
+                                        .split(' ')
+                                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                                        .join(' ')}
+                                </Card.Title>
+                                <Card.Text>{item.description}</Card.Text>
                             </Card.Body>
                         </Card>
                     </Link>
-                ))
-                }
-
+                ))}
             </ServiceContainer>
-        </div>
-    )
-}
 
-export default ServiceDetails
+            <Modal show={isModalOpen} size='lg' onHide={() => setIsModalOpen(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Start your claim</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <ServiceForm handleSuccess={handleSuccess} />
+                </Modal.Body>
+            </Modal>
+        </div>
+    );
+};
+
+export default ServiceDetails;
 
 const Title = styled.h3`
     color: white;

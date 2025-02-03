@@ -6,11 +6,10 @@ import styled from 'styled-components';
 import { navItems } from './constants';
 
 export const NavigationBar: FC = () => {
-
     const [searchText, setSearchText] = useState<string | null>(null);
     const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchText(event.target.value);
-    }
+    };
     return (
         <>
             <NavbarWrapper key='big' expand='lg' className='mb-3 px-3'>
@@ -25,15 +24,17 @@ export const NavigationBar: FC = () => {
                         placement='end'
                     >
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>Offcanvas</Offcanvas.Title>
+                            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
+                                <Image src={'/images/main-logo.png'} alt='image' width={200} height={50} />
+                            </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className='justify-content-center flex-grow-1 pe-3 '>
-                                <SearchBox>
+                                {/* <SearchBox>
                                     <input placeholder='Search' onChange={handleInputChange} />
                                     <Image src='/svg/mic.svg' width={26} height={22} alt='logo' />
                                     {!searchText && <BgImage src='/svg/search.svg' width={16} height={16} alt='logo' />}
-                                </SearchBox>
+                                </SearchBox> */}
                                 {/* <Form className='d-flex'>
                                 <Form.Control type='search' placeholder='Search' className='me-2' aria-label='Search' />
                                 <Button variant='outline-success'>Search</Button>

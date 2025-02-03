@@ -32,8 +32,8 @@ const useForm = (initialValues: FormData) => {
         if (name === 'phone' && value) {
             setErrors((prevErrors) => ({ ...prevErrors, phone: '' }));
         }
-        if (name === 'category' && value) {
-            setErrors((prevErrors) => ({ ...prevErrors, category: '' }));
+        if (name === 'department' && value) {
+            setErrors((prevErrors) => ({ ...prevErrors, department: '' }));
         }
         if (name === 'message' && value) {
             setErrors((prevErrors) => ({ ...prevErrors, message: '' }));
@@ -63,8 +63,8 @@ const useForm = (initialValues: FormData) => {
             formErrors.phone = 'Phone number is required';
             isValid = false;
         }
-        if (!formData.category) {
-            formErrors.category = 'Category is required';
+        if (!formData.department) {
+            formErrors.department = 'department is required';
             isValid = false;
         }
 
