@@ -12,8 +12,8 @@ export const NavigationBar: FC = () => {
     };
     return (
         <>
-            <NavbarWrapper key='big' expand='lg' className='mb-3 px-3'>
-                <Container fluid>
+            <NavbarWrapper key='big' expand='lg'>
+                <Container>
                     <Navbar.Brand href='/'>
                         <Image src='/images/main-logo.png' width={191} height={40} alt='main-logo' />
                     </Navbar.Brand>
@@ -29,17 +29,7 @@ export const NavigationBar: FC = () => {
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
-                            <Nav className='justify-content-center flex-grow-1 pe-3 '>
-                                {/* <SearchBox>
-                                    <input placeholder='Search' onChange={handleInputChange} />
-                                    <Image src='/svg/mic.svg' width={26} height={22} alt='logo' />
-                                    {!searchText && <BgImage src='/svg/search.svg' width={16} height={16} alt='logo' />}
-                                </SearchBox> */}
-                                {/* <Form className='d-flex'>
-                                <Form.Control type='search' placeholder='Search' className='me-2' aria-label='Search' />
-                                <Button variant='outline-success'>Search</Button>
-                            </Form> */}
-                            </Nav>
+                            <Nav className='justify-content-center flex-grow-1 pe-3 '></Nav>
                             <Nav>
                                 {navItems.map((item, idx) => (
                                     <Link className='p-2' key={idx} href={item.slug}>
