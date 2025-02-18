@@ -1,3 +1,13 @@
+import {
+    GrAchievement,
+    GrAdobeCreativeCloud,
+    GrAggregate,
+    GrAssistListening,
+    GrDocumentConfig,
+    GrGroup,
+    GrSync,
+} from 'react-icons/gr';
+
 export const subServiceDetails = [
     {
         serviceId: 'civil-litigation',
@@ -8,6 +18,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation in civil disputes.',
                 slug: 'litigation',
                 fileId: '1_6mNXJ8YvAqiROG2LdR51yb4kDJp6bgJ',
+                icon: GrGroup,
             },
             {
                 id: 'civil-litigation',
@@ -15,6 +26,7 @@ export const subServiceDetails = [
                 description: 'Comprehensive support for various litigation matters.',
                 slug: 'general-litigation',
                 fileId: '1_2umSariBGWQ-mlOpezNBVrFjJbFclc3',
+                icon: GrAssistListening,
             },
             {
                 id: 'civil-litigation',
@@ -22,6 +34,7 @@ export const subServiceDetails = [
                 description: 'Guidance on residential landlord-tenant disputes.',
                 slug: 'residential-litigation',
                 fileId: '1_1_A08JdJyGXknqr-2m--hwv3FycfFtc',
+                icon: GrGroup,
             },
             {
                 id: 'civil-litigation',
@@ -29,6 +42,7 @@ export const subServiceDetails = [
                 description: 'Legal assistance for commercial landlord-tenant issues.',
                 slug: 'commercial-litigation',
                 fileId: '1_0N2L1fmowVB4w6xzbdLjt8QviMJLuOO',
+                icon: GrSync,
             },
             {
                 id: 'civil-litigation',
@@ -36,6 +50,7 @@ export const subServiceDetails = [
                 description: 'Support for estate planning and probate matters.',
                 slug: 'probate-litigation',
                 fileId: '1ZvU6A2SVxckFlE4zGXEpjsOde_wPgUBn',
+                icon: GrAggregate,
             },
             {
                 id: 'civil-litigation',
@@ -43,6 +58,7 @@ export const subServiceDetails = [
                 description: 'Expert advice on insolvency and bankruptcy proceedings.',
                 slug: 'insolvency-bankruptcy-litigation',
                 fileId: '1ZuVO7EEZzBju2iXG9N_QeosQsuiAAmea',
+                icon: GrDocumentConfig,
             },
             {
                 id: 'civil-litigation',
@@ -50,6 +66,7 @@ export const subServiceDetails = [
                 description: 'Effective strategies for recovering debts and claims.',
                 slug: 'money-claims-debt-litigation',
                 fileId: '1ZruiqWuZGOgzfVVW7zGZSKLd5ucnhkzU',
+                icon: GrAchievement,
             },
         ],
     },
@@ -62,6 +79,7 @@ export const subServiceDetails = [
                 description: 'Dedicated legal support for your litigation needs.',
                 slug: 'family-children-service',
                 fileId: '1_nzyyvLFt1iPrEg_VR30sVXO69HyIVmA',
+                icon: GrGroup,
             },
             {
                 id: 'family-02',
@@ -69,6 +87,7 @@ export const subServiceDetails = [
                 description: 'Professional representation in civil litigation cases.',
                 slug: 'divorce-separation',
                 fileId: '1_neOkvNcqd90EQ3cKwXLhatYR3j-MkPd',
+                icon: GrAssistListening,
             },
             {
                 id: 'family-03',
@@ -76,6 +95,7 @@ export const subServiceDetails = [
                 description: 'Skilled advocacy in various litigation scenarios.',
                 slug: 'violence-abuse',
                 fileId: '1_iK_olYEZKCK5YI4KggDwYKeXF0V62yC',
+                icon: GrAggregate,
             },
 
             {
@@ -84,6 +104,7 @@ export const subServiceDetails = [
                 description: 'Tailored legal solutions for your litigation challenges.',
                 slug: 'child-arrangements',
                 fileId: '1_h0laeDge2DjRdo7ZKb0ARWtDOShrZMZ',
+                icon: GrAdobeCreativeCloud,
             },
             {
                 id: 'family-05',
@@ -91,6 +112,7 @@ export const subServiceDetails = [
                 description: 'Financial Orders Following Divorce: Understanding Your Rights Under English Law.',
                 slug: 'financial-orders',
                 fileId: '1_fPH_6SKI2epZdXzNBHElAr_mnXZ2UoH',
+                icon: GrAchievement,
             },
             {
                 id: 'family-06',
@@ -98,6 +120,7 @@ export const subServiceDetails = [
                 description: 'Focused legal strategies for successful litigation outcomes.',
                 slug: 'litigation-focused-strategies',
                 fileId: '1_cqG3cQABRVH6iuSaPnSZr3V99lzOjOd',
+                icon: GrDocumentConfig,
             },
             {
                 id: 'family-07',
@@ -105,6 +128,7 @@ export const subServiceDetails = [
                 description: 'Your trusted partner in navigating litigation processes.',
                 slug: 'litigation-trusted-partner',
                 fileId: '1_cbOaAeA9S5AgKQrhe9d1u4AZhpjHMRF',
+                icon: GrSync,
             },
         ],
     },
@@ -117,6 +141,7 @@ export const subServiceDetails = [
                 description: 'Expert legal guidance for medical negligence cases.',
                 slug: 'medical-negligence-expert-guidance',
                 fileId: '1acOoSeC0v89rkLKaHpf-E0ZjKMd_Gvzj',
+                icon: GrGroup,
             },
             {
                 id: 'mn-02',
@@ -124,6 +149,7 @@ export const subServiceDetails = [
                 description: 'Comprehensive legal support for catastrophic injuries.',
                 slug: 'catastrophic-injuries-comprehensive-support',
                 fileId: '1aMf1WKOWXrAuGVW3y233uSrjiAKAPAWP',
+                icon: GrGroup,
             },
             {
                 id: 'mn-03',
@@ -131,6 +157,7 @@ export const subServiceDetails = [
                 description: 'Specialized legal representation for anaesthetic injuries.',
                 slug: 'anaesthetic-injuries-specialized-representation',
                 fileId: '1aE1J7BfiYFKMn-GP_Hkp_p5HLchRH-Yo',
+                icon: GrGroup,
             },
             {
                 id: 'mn-04',
@@ -138,6 +165,7 @@ export const subServiceDetails = [
                 description: 'Dedicated legal assistance for surgical negligence cases.',
                 slug: 'surgical-negligence-dedicated-assistance',
                 fileId: '1aAm-uecUVyTESsno-xtVa-v2SFL4dIXE',
+                icon: GrGroup,
             },
             {
                 id: 'mn-05',
@@ -145,6 +173,7 @@ export const subServiceDetails = [
                 description: 'Proven legal strategies for missed, delayed, and wrongful diagnosis cases.',
                 slug: 'missed-delayed-wrongful-diagnosis-proven-strategies',
                 fileId: '1bVmjNyJo4B_PfnAOWy1mtqlFrysrEdyP',
+                icon: GrGroup,
             },
             {
                 id: 'mn-06',
@@ -152,6 +181,7 @@ export const subServiceDetails = [
                 description: 'Your trusted partner in navigating birth related injuries litigation.',
                 slug: 'birth-related-injuries-trusted-partner',
                 fileId: '1bVI373dqWNdYpi8Ywn7vJoow26_J33mO',
+                icon: GrGroup,
             },
             {
                 id: 'mn-07',
@@ -159,6 +189,7 @@ export const subServiceDetails = [
                 description: 'Focused legal support for gynaecological injuries cases.',
                 slug: 'gynaecological-injuries-focused-support',
                 fileId: '1bDsuDDul8w4y4mpqXJwShA6VD2hPKIMi',
+                icon: GrGroup,
             },
             {
                 id: 'mn-08',
@@ -166,6 +197,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for product liability claims related to medical devices.',
                 slug: 'product-liability-claims-medical-devices',
                 fileId: '1b0prTCIt2Ii6d8Viwz0WgZSNsMaZIx8W',
+                icon: GrGroup,
             },
             {
                 id: 'mn-09',
@@ -173,6 +205,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for plastic/cosmetic surgery negligence cases.',
                 slug: 'plastic-cosmetic-surgery-negligence',
                 fileId: '1aqHWtWT0WRzW8oPfHaMxjNGP59KHVoDA',
+                icon: GrGroup,
             },
             {
                 id: 'mn-10',
@@ -180,6 +213,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for consent to treatment cases.',
                 slug: 'consent-to-treatment',
                 fileId: '1abyCE8l9VDiRi2r-0pC1a6JVubnlyywP',
+                icon: GrGroup,
             },
             {
                 id: 'mn-11',
@@ -187,6 +221,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for GP negligence cases.',
                 slug: 'gp-negligence',
                 fileId: '1aWeLqc9Qb6yCQjEBdWKr4sbIex0Acbug',
+                icon: GrGroup,
             },
             {
                 id: 'mn-12',
@@ -194,6 +229,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for dental negligence cases.',
                 slug: 'dental-negligence',
                 fileId: '1aRHuau5O-6lf3TMdO4DcSqEW0bwCcs41',
+                icon: GrGroup,
             },
         ],
     },
@@ -206,6 +242,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for personal injury cases.',
                 slug: 'personal-injury-aid',
                 fileId: '1crm_8hvypMqS44NkCV1ad9X1jByoJAWb',
+                icon: GrGroup,
             },
             {
                 id: 'pi-02',
@@ -213,6 +250,7 @@ export const subServiceDetails = [
                 description: 'Comprehensive support for road traffic accident claims.',
                 slug: 'traffic-accidents',
                 fileId: '1cqckT1528NvL20u4Y_ojbl2dRLBOzZdk',
+                icon: GrGroup,
             },
             {
                 id: 'pi-03',
@@ -220,6 +258,7 @@ export const subServiceDetails = [
                 description: 'Specialized legal guidance for workplace accidents.',
                 slug: 'work-accidents',
                 fileId: '1cp8eZlw1rR0EdqHRHCVQ-ZZXz8JMI8Ey',
+                icon: GrGroup,
             },
             {
                 id: 'pi-04',
@@ -227,6 +266,7 @@ export const subServiceDetails = [
                 description: 'Strategic legal representation for occupational stress claims.',
                 slug: 'stress-claims',
                 fileId: '1cWUTCVoA5JrD0UN12P5cR-9KxgQqWwlY',
+                icon: GrGroup,
             },
             {
                 id: 'pi-05',
@@ -241,6 +281,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for product liability claims.',
                 slug: 'product-claims',
                 fileId: '1cNe1jWV5h8HUmrTjQmlcSfJVrNeW2dr7',
+                icon: GrGroup,
             },
             {
                 id: 'pi-07',
@@ -248,6 +289,7 @@ export const subServiceDetails = [
                 description: 'Compassionate legal support for fatal accident claims.',
                 slug: 'fatal-accidents',
                 fileId: '1cF8FB2GIGLSdGkDPJcPnwGCeHocqBp0n',
+                icon: GrGroup,
             },
         ],
     },
@@ -260,6 +302,7 @@ export const subServiceDetails = [
                 description: 'Comprehensive legal guidance for administrative review processes.',
                 slug: 'administrative-review',
                 fileId: '1a7v2pYP7q7ECnGKifwIfVElyjtJoS32N',
+                icon: GrGroup,
             },
             {
                 id: 'im-02',
@@ -267,6 +310,7 @@ export const subServiceDetails = [
                 description: 'Expert legal support for business immigration matters.',
                 slug: 'business-immigration',
                 fileId: '1a78owkfWpC-ZU5-JygZ0bEXyyLvFziyG',
+                icon: GrGroup,
             },
             {
                 id: 'im-03',
@@ -274,6 +318,7 @@ export const subServiceDetails = [
                 description: 'Personalized legal assistance for family visa applications.',
                 slug: 'family-visa',
                 fileId: '1a6UNv2eH-mtVzvMVs1Va6j35lyElGcdz',
+                icon: GrGroup,
             },
             {
                 id: 'im-04',
@@ -281,6 +326,7 @@ export const subServiceDetails = [
                 description: 'Exploring funding options for immigration services.',
                 slug: 'funding-options',
                 fileId: '1_wKDvgHGGCqNbHChJ7FyUfY1rko3So1Y',
+                icon: GrGroup,
             },
             {
                 id: 'im-05',
@@ -289,6 +335,7 @@ export const subServiceDetails = [
                     'Compassionate legal representation for human rights applications, asylum, and immigration appeals.',
                 slug: 'human-rights-applications',
                 fileId: '1_vuTkj1JUFu6leXscw5x0pOUZ8wOJ-Qp',
+                icon: GrGroup,
             },
             {
                 id: 'im-06',
@@ -296,6 +343,7 @@ export const subServiceDetails = [
                 description: 'Overview of immigration services and legal support.',
                 slug: 'immigration-main-page',
                 fileId: '1_rXiLIp5JW3x6oKO4zgjgj3aaXwWBdXR',
+                icon: GrGroup,
             },
             {
                 id: 'im-07',
@@ -303,6 +351,7 @@ export const subServiceDetails = [
                 description: 'Tailored legal solutions for individual immigration needs.',
                 slug: 'individual-immigration',
                 fileId: '1_rDXcdfSUwTgAKncQ9r4cBzsdD0aLul7',
+                icon: GrGroup,
             },
             {
                 id: 'im-08',
@@ -310,6 +359,7 @@ export const subServiceDetails = [
                 description: 'Expert legal representation for judicial review proceedings.',
                 slug: 'judicial-review',
                 fileId: '1ad0peQDm6KmsACF38ZLovkSL0svOkRzY',
+                icon: GrGroup,
             },
         ],
     },
@@ -322,6 +372,7 @@ export const subServiceDetails = [
                 description: 'Expert legal support for housing-related legal aid matters.',
                 slug: 'housing-aid',
                 fileId: '1a8BgJW5te8RC-_pLaV5x3nqmOG9o5Qlt',
+                icon: GrGroup,
             },
         ],
     },
@@ -334,6 +385,7 @@ export const subServiceDetails = [
                 description: 'Comprehensive legal guidance for employment-related issues.',
                 slug: 'employment-law',
                 fileId: '1_qXgNlrutqsx6Urq5hc4cLzkzq4pVD8s',
+                icon: GrGroup,
             },
         ],
     },
@@ -346,6 +398,7 @@ export const subServiceDetails = [
                 description: 'Expert legal guidance for mental health issues.',
                 slug: 'mental-health-aid',
                 fileId: '1aqDet1dTjyhoOrLd970StDmUh7g5l0WG',
+                icon: GrGroup,
             },
             {
                 id: 'mh-02',
@@ -353,6 +406,7 @@ export const subServiceDetails = [
                 description: 'Legal support for mental health detention under Sections 2 and 3.',
                 slug: 'mental-detention',
                 fileId: '1ajgvaWo1FjApjBCoqY4re-WClLbYy3VC',
+                icon: GrGroup,
             },
             {
                 id: 'mh-03',
@@ -360,6 +414,7 @@ export const subServiceDetails = [
                 description: 'Understanding rights under Section 7 Guardianship.',
                 slug: 'section-7',
                 fileId: '1ag8JgT_Upng8qSolSPm0mGO4Cuh2yLDk',
+                icon: GrGroup,
             },
             {
                 id: 'mh-04',
@@ -367,6 +422,7 @@ export const subServiceDetails = [
                 description: 'Legal guidance for Section 17A Community Treatment Orders.',
                 slug: 'section-17a',
                 fileId: '1cDbVC9Dm0I2dpimaA2wyibbfecWenCze',
+                icon: GrGroup,
             },
             {
                 id: 'mh-05',
@@ -374,6 +430,7 @@ export const subServiceDetails = [
                 description: 'Understanding Section 37 Powers of Courts for Hospital Admission or Guardianship.',
                 slug: 'section-37',
                 fileId: '1cAfIOSyv_Nhmlo96_y0g-Hz61fjr8Pv9',
+                icon: GrGroup,
             },
             {
                 id: 'mh-06',
@@ -381,6 +438,7 @@ export const subServiceDetails = [
                 description: 'Understanding rights under Sections 38, 41(5), 45A, and 48.',
                 slug: 'mental-rights',
                 fileId: '1c5XY1X22yYzKdhf_pzXnOhNGqfFUPOsl',
+                icon: GrGroup,
             },
             {
                 id: 'mh-07',
@@ -388,6 +446,7 @@ export const subServiceDetails = [
                 description: 'Understanding rights under Section 7 Guardianship Orders.',
                 slug: 'guardianship',
                 fileId: '1c1VTcPeFaZzjNphrvfP7LLTp71vfmJfu',
+                icon: GrGroup,
             },
             {
                 id: 'mh-08',
@@ -395,6 +454,7 @@ export const subServiceDetails = [
                 description: 'Legal support for challenging detention in hospital.',
                 slug: 'challenging-detention',
                 fileId: '1c-3VuTDB1WY45VH_unWIzNa4iLoMbt3s',
+                icon: GrGroup,
             },
             {
                 id: 'mh-09',
@@ -402,6 +462,7 @@ export const subServiceDetails = [
                 description: 'Legal guidance for hospital orders.',
                 slug: 'hospital-orders',
                 fileId: '1bZCoLFnupWW1N9GLiQL2pzHOLqovVhxv',
+                icon: GrGroup,
             },
             {
                 id: 'mh-10',
@@ -409,6 +470,7 @@ export const subServiceDetails = [
                 description: 'Legal support for Community Treatment Orders (CTO).',
                 slug: 'community-treatment',
                 fileId: '1bXPVgZVFoO_uOvAO0iILNhnIk04k3ngT',
+                icon: GrGroup,
             },
             {
                 id: 'mh-11',
@@ -416,6 +478,7 @@ export const subServiceDetails = [
                 description: 'Legal guidance for prison transfers under Section 47.',
                 slug: 'prison-transfers',
                 fileId: '1bWrCkCyoPBC-rEdIDbzAbKJvrvx91brr',
+                icon: GrGroup,
             },
             {
                 id: 'mh-12',
@@ -423,6 +486,7 @@ export const subServiceDetails = [
                 description: 'Funding options for legal cases.',
                 slug: 'legal-aid',
                 fileId: '1ctOuJlppzUtb32nLgH_gFXYqbrThP2tE',
+                icon: GrGroup,
             },
         ],
     },
@@ -435,6 +499,7 @@ export const subServiceDetails = [
                 description: 'Specialized legal assistance for commercial property transactions and disputes.',
                 slug: 'commercial-conveyancing-aid',
                 fileId: '1ZqWpOF04MeuG4Ao5xcFnycOOdHTlxVcu',
+                icon: GrGroup,
             },
         ],
     },
@@ -447,6 +512,7 @@ export const subServiceDetails = [
                 description: 'Expert legal support for criminal cases.',
                 slug: 'criminal-defence',
                 fileId: '1_bpiizuhKUmcmuTH8J_NTCzIPLjMvWto',
+                icon: GrGroup,
             },
             {
                 id: 'cr-02',
@@ -454,6 +520,7 @@ export const subServiceDetails = [
                 description: 'Legal representation at police stations.',
                 slug: 'police-rep',
                 fileId: '1_WaxWG6VSfcQOLDK8WQY3EWjuZklIF8m',
+                icon: GrGroup,
             },
             {
                 id: 'cr-03',
@@ -461,6 +528,7 @@ export const subServiceDetails = [
                 description: 'Professional court representation services.',
                 slug: 'court-rep',
                 fileId: '1_NOMkYfLe5V4gsPMFyiDXbykTg-ACkec',
+                icon: GrGroup,
             },
             {
                 id: 'cr-04',
@@ -468,6 +536,7 @@ export const subServiceDetails = [
                 description: 'Specialized defence for serious crimes.',
                 slug: 'serious-crime',
                 fileId: '1_MRfP0zCATzV3ON2jrQiwuliMeUXzF0J',
+                icon: GrGroup,
             },
             {
                 id: 'cr-05',
@@ -475,6 +544,7 @@ export const subServiceDetails = [
                 description: 'Legal assistance for road traffic violations.',
                 slug: 'traffic-offences',
                 fileId: '1_Ke8sb1hhOk0l2wqpjouOd_hyAg-JLdz',
+                icon: GrGroup,
             },
             {
                 id: 'cr-06',
@@ -482,6 +552,7 @@ export const subServiceDetails = [
                 description: 'Expert legal support for appeals.',
                 slug: 'appeals',
                 fileId: '1_Jk-qpYX4yjLTWyqK13i173v-66T4xll',
+                icon: GrGroup,
             },
             {
                 id: 'cr-07',
@@ -489,6 +560,7 @@ export const subServiceDetails = [
                 description: 'Legal action against police misconduct.',
                 slug: 'police-action',
                 fileId: '1_EYeMSWBvx4ALSvesXKVU7jP3oD7cLH8',
+                icon: GrGroup,
             },
             {
                 id: 'cr-08',
@@ -496,6 +568,7 @@ export const subServiceDetails = [
                 description: 'Guiding principles for legal proceedings.',
                 slug: 'guiding-principles',
                 fileId: '1_BwJSin8o6DKv-q0YDWslImQ7D6IbLH5',
+                icon: GrGroup,
             },
         ],
     },
