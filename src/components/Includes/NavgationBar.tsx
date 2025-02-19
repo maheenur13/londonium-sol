@@ -46,10 +46,10 @@ export const NavigationBar: FC = () => {
 };
 
 const NavbarWrapper = styled(Navbar)`
-    background-color: #f0f0f0 !important;
+    background-color: #0e0e0e !important;
     a {
         text-decoration: none;
-        color: var(--bs-dark);
+        color: var(--bs-white);
         margin: 0 0.155rem;
     }
 `;
