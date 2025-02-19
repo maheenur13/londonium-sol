@@ -1,2 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap/scss/bootstrap';
+
+.modal-backdrop {
+    --bs-backdrop-bg: white;
+    // &.show {
+    //     opacity: 0.7;
+    // }
+}
+// .modal-backdrop.show {
+//     opacity: 1;
+// }
