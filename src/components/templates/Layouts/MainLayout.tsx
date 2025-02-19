@@ -55,12 +55,7 @@ type PropsType = {
 };
 
 const MainContent = styled.div`
-    max-height: calc(100vh - 144px);
-    overflow-y: auto;
-    overflow-x: hidden;
     position: relative;
-    /* display: flex;
-     */
 `;
 const Wrapper = styled.div`
     .hover-section {

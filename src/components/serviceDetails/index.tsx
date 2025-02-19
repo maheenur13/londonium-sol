@@ -106,9 +106,14 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
                 ))}
             </ServiceContainer>
 
-            <Modal show={isModalOpen} size='lg' onHide={() => setIsModalOpen(false)}>
+            <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Start your claim</Modal.Title>
+                    <Modal.Title
+                        style={{ flexGrow: 2, fontSize: '2rem', textTransform: 'uppercase', fontWeight: 700 }}
+                        className='text-center'
+                    >
+                        Start <span style={{ color: 'red' }}>your</span> claim
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <ServiceForm handleSuccess={handleSuccess} />
