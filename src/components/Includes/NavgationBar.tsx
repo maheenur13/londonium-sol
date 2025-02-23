@@ -1,3 +1,4 @@
+import { BrandLogo } from '@components/Atoms';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChangeEvent, ChangeEventHandler, FC, useState } from 'react';
@@ -15,7 +16,7 @@ export const NavigationBar: FC = () => {
             <NavbarWrapper key='big' expand='lg'>
                 <Container>
                     <Navbar.Brand href='/'>
-                        <Image src='/images/main-logo.png' width={191} height={40} alt='main-logo' />
+                        <BrandLogo />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
                     <Navbar.Offcanvas
@@ -47,6 +48,7 @@ export const NavigationBar: FC = () => {
 
 const NavbarWrapper = styled(Navbar)`
     background-color: #0e0e0e !important;
+    padding: 1.5rem 0;
     a {
         text-decoration: none;
         color: var(--bs-white);

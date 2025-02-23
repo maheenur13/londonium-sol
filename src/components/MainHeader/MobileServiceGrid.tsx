@@ -20,7 +20,7 @@ const MobileServiceGrid: FC<PropsType> = ({ handleClaimClick, handleItemClick })
             <Swiper pagination={true} modules={[Pagination]} className='mySwiper'>
                 {Object.entries(mobileGallery).map((slideItems, slideIndex) => (
                     <SwiperSlide key={slideIndex}>
-                        <Wrapper width={width} className='wrapper  mx-4'>
+                        <Wrapper width={width} className='wrapper  mx-2'>
                             {slideItems[1].map((item, itemIndex) => (
                                 <ImageWrapper
                                     onClick={() => handleItemClick(item)}

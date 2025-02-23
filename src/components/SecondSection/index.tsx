@@ -32,7 +32,7 @@ const items = [
 
 const SecondSection: FC = () => {
     return (
-        <div className='my-5 mx-2'>
+        <div className='my-3'>
             <GridWrapper>
                 {items.map((item, idx) => (
                     <ItemWrapper key={idx}>
@@ -45,12 +45,18 @@ const SecondSection: FC = () => {
                                     {item.subtitle}
                                 </TitleWrapper>
 
-                                <StyledCardText>{item.text}</StyledCardText>
+                                {/* <StyledCardText>{item.text}</StyledCardText> */}
                             </Card.Body>
                             <Card.Footer style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}>
                                 <small>
                                     Register Interest{' '}
-                                    <Icon path={arrowAngelRight} strokeWidth='0.5' width={18} height={18} />
+                                    <Icon
+                                        path={arrowAngelRight}
+                                        fill='white'
+                                        strokeWidth='0.5'
+                                        width={18}
+                                        height={18}
+                                    />
                                 </small>
                             </Card.Footer>
                         </CardWrapper>
@@ -82,8 +88,7 @@ const GridWrapper = styled.div`
 const ItemWrapper = styled.div`
     // Add any additional styles for the item wrapper here
     // For example, you can set a max-width or padding
-    border: 1px solid #ccc; // Example style
-    border-radius: 8px; // Example style
+    border-radius: 0px;
     overflow: hidden; // Example style
 `;
 
@@ -93,7 +98,8 @@ const CardWrapper = styled(Card)<{ bgImage: string }>`
     max-height: 17.5rem;
     overflow: hidden;
     cursor: pointer;
-    background-color: rgba(42, 42, 42, 0.619);
+    background-color: rgba(19, 19, 19, 0.261);
+    border-radius: 0;
 
     &::before {
         content: '';
@@ -106,7 +112,7 @@ const CardWrapper = styled(Card)<{ bgImage: string }>`
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        filter: blur(0.25rem);
+
         z-index: -1;
     }
     transition: 0.2s;

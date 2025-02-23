@@ -1,6 +1,8 @@
 import { FC, Fragment, useState } from 'react';
+
 import { galleryArray, HeaderItemProps } from './constants';
 
+import Icon, { arrowRightS } from '@libs/icons';
 import { getDescriptionFontSize, getSubtitleFontSize } from '@utils/index';
 import { useWindowSize } from 'hooks';
 import { ImageWrapper, Wrapper } from './styles';
@@ -35,7 +37,7 @@ export const RegularServiceGrid: FC<PropsType> = ({ handleClaimClick, handleItem
 
     return (
         <Fragment>
-            <Wrapper width={width} hoverimage={bgImage} className='wrapper  mx-4'>
+            <Wrapper width={width} hoverimage={bgImage} className='wrapper'>
                 {galleryArray.map((item, idx) => (
                     <ImageWrapper
                         onMouseLeave={() => {
@@ -56,8 +58,12 @@ export const RegularServiceGrid: FC<PropsType> = ({ handleClaimClick, handleItem
                         hoverimage={bgImage}
                         onClick={() => handleItemClick(item)}
                     >
-                        <p style={{ fontSize: descriptionFontSize, margin: 0 }}>
-                            {!item?.image && isHoveredOnImage && item.title}
+                        <p style={{ fontSize: '1rem', margin: 0, fontWeight: 600 }}>
+                            {!item?.image && isHoveredOnImage && (
+                                <div className='d-flex flex-column align-items-start'>
+                                    <Icon path={arrowRightS} /> {item.title}
+                                </div>
+                            )}
                         </p>
 
                         {item?.bgImage ? (
@@ -65,7 +71,7 @@ export const RegularServiceGrid: FC<PropsType> = ({ handleClaimClick, handleItem
                                 <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
                                     <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
                                     <button
-                                        style={{ fontSize: descriptionFontSize }}
+                                        style={{ fontSize: '0.75rem' }}
                                         onClick={(event) => {
                                             event.stopPropagation();
                                             handleClaimClick();

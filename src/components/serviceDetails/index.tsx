@@ -52,7 +52,7 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
                 </ImageWrapper>
             </ContentWrapper>
             <ServiceContainer>
-                {subServices?.services.map((item) => (
+                {subServices?.services.map((item: any) => (
                     <Link
                         style={{
                             textDecoration: 'none',
@@ -87,7 +87,7 @@ const ServiceDetails: FC<PropsType> = ({ serviceName }) => {
                                     {item?.title
                                         ?.toUpperCase()
                                         .split(' ')
-                                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                                        .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
                                         .join(' ')}
                                 </Card.Title>
                                 <Card.Text

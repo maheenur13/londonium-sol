@@ -1,6 +1,6 @@
+import { BrandLogo } from '@components/Atoms';
 import Icon, { mailUnread, mapPin, phoneDialPad } from '@libs/icons';
 import { useResponsive } from 'hooks';
-import Image from 'next/image';
 import { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -15,7 +15,7 @@ export const FirstFooter: FC = () => {
                     <Row>
                         <Col md={isMobile ? 12 : 6} sm={12}>
                             <div className='m-2'>
-                                <Image src={'/images/bottom-log.png'} width={220} height={70} alt='image' />
+                                <BrandLogo />
                             </div>
                             <div className='m-3'>
                                 <Icon className='me-3' fill='var(--bs-white)' path={mapPin} width={26} height={26} />
