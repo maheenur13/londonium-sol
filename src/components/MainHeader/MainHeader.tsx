@@ -27,8 +27,6 @@ export const MainHeader: FC = () => {
         setIsModalOpen(true);
     };
 
-    // const galleryItem = isMobile ? mobileGallery : galleryArray;
-
     return (
         <div>
             {isMobile ? (

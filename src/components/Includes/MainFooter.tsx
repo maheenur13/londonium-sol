@@ -1,3 +1,4 @@
+import { BrandLogo } from '@components/Atoms';
 import Icon, { facebookCircleFill, instagramFill, linkedinFill, mapPinFull, phoneDialPad, twitter } from '@libs/icons';
 import { useResponsive } from 'hooks';
 import Image from 'next/image';
@@ -13,7 +14,7 @@ export const MainFooter: FC = () => {
                 {!isMobile ? (
                     <div className='d-flex align-items-center justify-content-between'>
                         <div>
-                            <Image src='/images/white-logo.png' width={134} height={42} alt='logo' />
+                            <BrandLogo />
 
                             <Image className='ms-3' src='/images/footer-image.png' width={37} height={21} alt='logo' />
                         </div>
