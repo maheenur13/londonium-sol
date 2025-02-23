@@ -71,7 +71,7 @@ export const RegularServiceGrid: FC<PropsType> = ({ handleClaimClick, handleItem
                                 <div className=' p-2 d-flex  flex-column justify-content-between text-start h-100  align-items-start'>
                                     <h4 style={{ fontSize: subtitleFontSize }}>{item?.bgImage && item.title}</h4>
                                     <button
-                                        style={{ fontSize: '0.5rem' }}
+                                        style={{ fontSize: '0.75rem' }}
                                         onClick={(event) => {
                                             event.stopPropagation();
                                             handleClaimClick();

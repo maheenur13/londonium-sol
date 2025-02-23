@@ -32,7 +32,7 @@ const items = [
 
 const SecondSection: FC = () => {
     return (
-        <div className='my-3 '>
+        <div className='my-3'>
             <GridWrapper>
                 {items.map((item, idx) => (
                     <ItemWrapper key={idx}>
