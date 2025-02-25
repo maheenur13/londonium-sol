@@ -1,6 +1,8 @@
 import { BrandLogo } from '@components/Atoms';
 import Icon, { mailUnread, mapPin, phoneDialPad } from '@libs/icons';
 import { useResponsive } from 'hooks';
+import Image from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -41,22 +43,45 @@ export const FirstFooter: FC = () => {
                                 />
                                 <span>info@londoniumsolicitors.co.uk</span>
                             </div>
+
+                            <Image
+                                className='mt-3 ms-3'
+                                src='/images/footer-image.png'
+                                width={180}
+                                height={120}
+                                alt='logo'
+                                style={{
+                                    objectFit: 'cover',
+                                }}
+                            />
                         </Col>
                         <Col md={6} sm={12}>
                             <Row className='mt-3'>
                                 <Col ms={12}>
                                     <div className='  d-flex flex-column align-items-start justify-content-between'>
-                                        <h1 className='mb-3' style={{ fontSize: isMobile ? '1.1rem' : '20px' }}>
+                                        <h1 className='mb-2' style={{ fontSize: isMobile ? '1.1rem' : '1.375rem' }}>
                                             Links
                                         </h1>
-                                        <p>Home</p>
-                                        <p>About Us</p>
-                                        <p>Services</p>
-                                        <p>Team</p>
-                                        <p>Blog</p>
+                                        <Link href={'/'}>Home</Link>
+                                        <Link href={'#about'}>About Us</Link>
+                                        <Link href={'#service'}>Services</Link>
+                                        <Link href={'#team'}>Team</Link>
+                                        <Link href={'#our-fee'}>Our Fee</Link>
+                                        <Link href={'#our-fee'}>Contact Us</Link>
+                                    </div>
+                                    <div className='  d-flex flex-column align-items-start justify-content-between'>
+                                        <h1
+                                            className='mb-2 mt-3'
+                                            style={{ fontSize: isMobile ? '1.1rem' : '1.375rem' }}
+                                        >
+                                            Legal
+                                        </h1>
+                                        <Link href={'/'}>Team</Link>
+                                        <Link href={'#about'}>Our Fee</Link>
+                                        <Link href={'#service'}>Contact Us</Link>
                                     </div>
                                 </Col>
-                                <Col ms={4}>
+                                {/* <Col ms={4}>
                                     <div className='d-flex flex-column align-items-start justify-content-between'>
                                         <h1
                                             className='mb-3'
@@ -69,44 +94,55 @@ export const FirstFooter: FC = () => {
                                         <p>Our Mission</p>
                                         <p>Get a free Quote</p>
                                     </div>
-                                </Col>
-                                <Col ms={4}>
+                                </Col> */}
+                                <Col ms={6}>
                                     <div className='d-flex flex-column align-items-start justify-content-between'>
-                                        <h1 className='mb-3' style={{ fontSize: isMobile ? '1.1rem' : '20px' }}>
-                                            Services
+                                        <h1 className='mb-2' style={{ fontSize: isMobile ? '1.1rem' : '1.375rem' }}>
+                                            Our Area of Services
                                         </h1>
-                                        <p>App Development</p>
-                                        <p>Web Development</p>
-                                        <p>Graphics Design</p>
-                                        <p>App Design</p>
+                                        <Link href={'/'}>Family</Link>
+                                        <Link href={'#about'}>Medical Negligence</Link>
+                                        <Link href={'#service'}>Personal Injury</Link>
+                                        <Link href={'#team'}>Housing Legal Aid</Link>
+                                        <Link href={'#our-fee'}>Commercial Conveyancing</Link>
+                                        <Link href={'#our-fee'}>Mental Health</Link>
+                                        <Link href={'#team'}>Civil Litigation</Link>
+                                        <Link href={'#our-fee'}>Crime</Link>
+                                        <Link href={'#our-fee'}>Employment</Link>
+                                        <Link href={'#our-fee'}>Immigration</Link>
                                     </div>
                                 </Col>
                             </Row>
                         </Col>
-                        <Col md={12}>
-                            <div className='mt-5 d-flex flex-wrap justify-content-center'>
-                                <Col xs={6} md={3} className='text-center'>
-                                    <p>Privacy Policy</p>
-                                </Col>
-                                <Col xs={6} md={3} className='text-center'>
-                                    <p>Cookie Policy</p>
-                                </Col>
-                                <Col xs={6} md={3} className='text-center'>
-                                    <p>Term & Conditions</p>
-                                </Col>
-                                <Col xs={6} md={3} className='text-center'>
-                                    <p>Contact Us</p>
-                                </Col>
-                            </div>
-                        </Col>
                     </Row>
                 </Container>
             </Wrapper>
-            <div className='p-4 bg-white'>
-                <p style={{ color: 'rgba(75, 75, 75, 0.5)' }} className='m-0 text-center'>
-                    @ Copyright 2023 Londonium Solicitors. All rights reserved.
-                </p>
-            </div>
+
+            {!isMobile ? (
+                <Container className='p-4 px-5 bg-white d-flex justify-content-between align-items-center'>
+                    <p className='m-0 '>Copyright 2025 Londonium Solicitors. All rights reserved.</p>
+                    <>|</>
+                    <p className='m-0 '>Privacy Policy</p>
+                    <>|</>
+                    <p className='m-0 '>Cookie Policy</p>
+                    <>|</>
+                    <p className='m-0'>Term & Conditions</p>
+                </Container>
+            ) : (
+                <>
+                    <Container className='p-3'>
+                        <p className='m-0 text-center'>Copyright 2025 Londonium Solicitors. All rights reserved.</p>
+
+                        <div className='d-flex justify-content-between align-items-center mt-2'>
+                            <p className='m-0 '>Privacy Policy</p>
+                            <>|</>
+                            <p className='m-0 '>Cookie Policy</p>
+                            <>|</>
+                            <p className='m-0'>Term & Conditions</p>
+                        </div>
+                    </Container>
+                </>
+            )}
         </>
     );
 };
@@ -115,4 +151,11 @@ const Wrapper = styled.div<{ $isMobile: boolean }>`
     background-color: #0e0e0e;
     padding: ${({ $isMobile }) => ($isMobile ? '1rem' : '2rem 4rem')};
     color: var(--bs-white);
+
+    a {
+        text-decoration: none;
+        color: var(--bs-white);
+        margin-bottom: 0.125rem;
+        /* font-weight: 300; */
+    }
 `;
