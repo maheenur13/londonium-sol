@@ -44,8 +44,7 @@ const SecondSection: FC = () => {
                                 <TitleWrapper style={{ fontWeight: 500, fontSize: '1.15rem' }}>
                                     {item.subtitle}
                                 </TitleWrapper>
-
-                                {/* <StyledCardText>{item.text}</StyledCardText> */}
+                                <StyledCardText className='description mt-3'>{item.text}</StyledCardText>
                             </Card.Body>
                             <Card.Footer style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}>
                                 <small>
@@ -100,6 +99,16 @@ const CardWrapper = styled(Card)<{ bgImage: string }>`
     cursor: pointer;
     background-color: rgba(19, 19, 19, 0.261);
     border-radius: 0;
+    .description {
+        display: none;
+        font-size: 0.875rem;
+    }
+    &:hover {
+        background-color: rgba(19, 19, 19, 0.829);
+        .description {
+            display: block;
+        }
+    }
 
     &::before {
         content: '';
@@ -115,6 +124,15 @@ const CardWrapper = styled(Card)<{ bgImage: string }>`
 
         z-index: -1;
     }
+
+    /* &:hover {
+        &:before {
+            background-color: red;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+    } */
     transition: 0.2s;
 
     color: #ffffffff;
