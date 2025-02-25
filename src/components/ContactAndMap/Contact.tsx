@@ -63,14 +63,8 @@ export const Contact: FC = () => {
 
     return (
         <FormWrapper>
-            <div className='my-3'>
-                <p className='m-0' style={{ color: '#6D6D6D', fontSize: '1.2rem' }}>
-                    Londonium Solicitors
-                </p>
-                <p className='m-0' style={{ color: '#6D6D6D', fontSize: '1.2rem' }}>
-                    Unit 14 -16, 1-13 Adler St, London E1 1EG
-                </p>
-            </div>
+            <h1 className='mb-4'>Tell us your story</h1>
+
             <Form
                 ref={(form: HTMLFormElement | null) => {
                     setFormElement(form);
@@ -96,9 +90,11 @@ export const Contact: FC = () => {
                         {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
                     </Form.Group>
                     <Form.Group className='mb-4' controlId='formSelect'>
-                        <Form.Label>Choose a Department</Form.Label>
-                        <Form.Control required as='select' name='department'>
-                            <option value=''>Select...</option>
+                        {/* <Form.Label>Choose a Department</Form.Label> */}
+                        <Form.Control className='select-field' required as='select' name='department'>
+                            <option value={''} className='select-value'>
+                                Select...
+                            </option>
                             <option value='general_enquiries'>General Enquiries</option>
                             <option value='medical_negligence'>Medical Negligence</option>
                             <option value='civil_litigation'>Civil Litigation</option>
@@ -132,11 +128,29 @@ export const Contact: FC = () => {
 };
 
 const FormWrapper = styled.div`
-    padding: 1rem;
-    input {
+    margin-bottom: 3rem;
+    background-color: #f5f7f7;
+    border-radius: 1rem;
+    padding: 3rem 4rem;
+    .form-control {
+        color: #818181;
         border: none;
         border-radius: 0px;
         border-bottom: 1px solid #d7d7d7;
-        /* border: none; */
+        background-color: transparent;
+
+        &::placeholder {
+            color: #cdcdcd;
+        }
+
+        &:focus {
+            background-color: transparent;
+            outline: none !important;
+            border: none !important;
+        }
+        &:active {
+            outline: none !important;
+            border: none !important;
+        }
     }
 `;
