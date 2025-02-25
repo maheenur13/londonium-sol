@@ -58,13 +58,16 @@ export const RegularServiceGrid: FC<PropsType> = ({ handleClaimClick, handleItem
                         hoverimage={bgImage}
                         onClick={() => handleItemClick(item)}
                     >
-                        <p style={{ fontSize: '1rem', margin: 0, fontWeight: 600 }}>
+                        <div>
                             {!item?.image && isHoveredOnImage && (
-                                <div className='d-flex flex-column align-items-start'>
+                                <p
+                                    style={{ fontSize: '1rem', margin: 0, fontWeight: 600 }}
+                                    className='d-flex flex-column align-items-start'
+                                >
                                     <Icon path={arrowRightS} /> {item.title}
-                                </div>
+                                </p>
                             )}
-                        </p>
+                        </div>
 
                         {item?.bgImage ? (
                             <div className='hover-item'>
@@ -81,9 +84,7 @@ export const RegularServiceGrid: FC<PropsType> = ({ handleClaimClick, handleItem
                                     </button>
                                 </div>
                             </div>
-                        ) : (
-                            ''
-                        )}
+                        ) : null}
                     </ImageWrapper>
                 ))}
             </Wrapper>
