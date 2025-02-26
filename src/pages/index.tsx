@@ -10,7 +10,7 @@ import { Container } from 'react-bootstrap';
 export default function Home() {
     return (
         <Fragment>
-            <Container>
+            <Container style={{ padding: '0' }}>
                 <MainHeader />
                 <InfoSlider />
                 <SecondSection />
