@@ -52,6 +52,7 @@ export const ImageWrapper = styled.div<WrapperType>`
 `;
 
 export const Wrapper = styled.div<{ hoverimage?: string; width: number }>`
+    /* border: 1px solid red; */
     position: relative;
     display: grid;
     grid-template-columns: repeat(10, 1fr) auto;
