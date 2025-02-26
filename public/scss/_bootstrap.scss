@@ -1,5 +1,3 @@
-@import '~bootstrap/scss/bootstrap';
-@import '~bootstrap/scss/bootstrap';
 @import './variable';
 
 .modal-backdrop {
@@ -7,6 +5,14 @@
     // &.show {
     //     opacity: 0.7;
     // }
+}
+.carousel {
+    .carousel-inner {
+        height: 100%;
+        .carousel-item {
+            height: 100%;
+        }
+    }
 }
 // .modal-backdrop.show {
 //     opacity: 1;
