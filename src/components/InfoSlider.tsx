@@ -1,7 +1,8 @@
 import Icon, { arrowLeftS, arrowRightS } from '@libs/icons';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import styled from 'styled-components';
+import { NavItemsEnums } from '../constants';
 
 // About Us
 // Londonium Solicitors stands as one of London's preeminent law firms, distinguished by our exceptional talent and unwavering commitment to excellence. Our organisation comprises highly motivated solicitors who consistently deliver exemplary legal services across a diverse range of practice areas, addressing our clients' most significant legal matters with precision and expertise.
@@ -55,8 +56,10 @@ const infoData: InfoDataType[] = [
 ];
 
 const InfoSlider: FC = () => {
+    const [isTextHovered, setIsTextHovered] = useState<boolean>(false);
     return (
         <Wrapper
+            id={NavItemsEnums.EXPERTISE}
             style={{
                 backgroundColor: '#F5F7F7',
                 height: '300px',
@@ -82,7 +85,14 @@ const InfoSlider: FC = () => {
                             <h1 style={{ textTransform: 'uppercase' }} className='fade-text'>
                                 {item.topText}
                             </h1>
-                            <h1 style={{ textTransform: 'uppercase' }}>{item.bottomText}</h1>
+                            <h1
+                                onMouseEnter={() => setIsTextHovered(true)}
+                                onMouseLeave={() => setIsTextHovered(false)}
+                                className='swipe-animation-on-hover'
+                                style={{ textTransform: 'uppercase' }}
+                            >
+                                {item.bottomText}
+                            </h1>
                         </Carousel.Caption>
                     </Carousel.Item>
                 ))}
@@ -105,9 +115,6 @@ const Wrapper = styled.div`
 
     .carousel-item {
         height: 100%;
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
         .carousel-caption {
             position: absolute;
             top: 50%;
