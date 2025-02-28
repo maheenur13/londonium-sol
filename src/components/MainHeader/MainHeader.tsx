@@ -3,6 +3,7 @@ import { useResponsive } from 'hooks';
 import { useRouter } from 'next/router';
 import { FC, useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import { NavItemsEnums } from '../../constants';
 import { HeaderItemProps } from './constants';
 import MobileServiceGrid from './MobileServiceGrid';
 import { RegularServiceGrid } from './RegularServiceGrid';
@@ -28,7 +29,7 @@ export const MainHeader: FC = () => {
     };
 
     return (
-        <div>
+        <div id={NavItemsEnums.HOME}>
             {isMobile ? (
                 <MobileServiceGrid handleClaimClick={handleClaimClick} handleItemClick={handleItemClick} />
             ) : (
