@@ -1,9 +1,10 @@
 import { Contact } from '@components/ContactAndMap/Contact';
 import { Col, Row } from 'react-bootstrap';
+import { NavItemsEnums } from '../../constants';
 
 const ContactUsSection = () => {
     return (
-        <Row style={{ alignItems: 'center', padding: '0 3rem' }}>
+        <Row id={NavItemsEnums.CONTACT} style={{ alignItems: 'center', padding: '0 3rem' }}>
             <Col sm={5} style={{ padding: '0 4rem' }}>
                 <h1 style={{ marginBottom: '1rem' }}>Contact Us</h1>
                 <p style={{ color: '#969696' }}>
