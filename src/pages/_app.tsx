@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import '../../public/scss/app.scss';
 
 import { Roboto } from 'next/font/google';
+import { AOSProvider } from '../providers';
 
 const roboto = Roboto({
     weight: ['400', '700'],
@@ -17,9 +18,11 @@ const roboto = Roboto({
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <main className={roboto.className}>
-            <MainLayout>
-                <Component {...pageProps} />
-            </MainLayout>
+            <AOSProvider>
+                <MainLayout>
+                    <Component {...pageProps} />
+                </MainLayout>
+            </AOSProvider>
         </main>
     );
 }
