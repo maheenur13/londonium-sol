@@ -7,7 +7,7 @@ const AboutSection = () => {
     return (
         <Wrapper id={NavItemsEnums.ABOUT}>
             <Row style={{ margin: '6rem 2rem', alignItems: 'center' }}>
-                <Col sm={5}>
+                <Col sm={5} data-aos='fade-right'>
                     <div className='image-wrapper' style={{ position: 'relative', height: '400px' }}>
                         <Image
                             src={'/images/legal-consult.jpg'}
@@ -20,7 +20,7 @@ const AboutSection = () => {
                         />
                     </div>
                 </Col>
-                <Col sm={7} style={{ padding: '0 2rem' }}>
+                <Col sm={7} style={{ padding: '0 2rem' }} data-aos='fade-left'>
                     <h1>About Us</h1>
                     <p style={{ color: '#969696' }}>
                         Londonium Solicitors is a trusted legal firm dedicated to providing expert advice and tailored
