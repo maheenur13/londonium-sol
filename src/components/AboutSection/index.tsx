@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
+import { NavItemsEnums } from '../../constants';
 
 const AboutSection = () => {
     return (
-        <Wrapper>
+        <Wrapper id={NavItemsEnums.ABOUT}>
             <Row style={{ margin: '6rem 2rem', alignItems: 'center' }}>
                 <Col sm={5}>
                     <div className='image-wrapper' style={{ position: 'relative', height: '400px' }}>
