@@ -1,26 +1,29 @@
+import { NavItemsEnums } from '../../constants';
+
 export const navItems = [
     {
         title: 'Home',
-        slug: '/',
-    },
-    {
-        title: 'About',
-        slug: '/',
+        slug: NavItemsEnums.HOME,
     },
     {
         title: 'Expertise',
-        slug: '/',
+        slug: NavItemsEnums.EXPERTISE,
     },
     {
         title: 'Team',
-        slug: '/',
+        slug: NavItemsEnums.TEAM,
     },
     {
-        title: 'Career',
-        slug: '/',
+        title: 'About',
+        slug: NavItemsEnums.ABOUT,
+    },
+
+    {
+        title: 'Our Fees',
+        slug: NavItemsEnums.OUR_FEES,
     },
     {
         title: 'Contact',
-        slug: '/',
+        slug: NavItemsEnums.CONTACT,
     },
 ];
