@@ -1,6 +1,7 @@
 import { SearchFilterSection, TeamHeader, TeamList } from '@components/Team';
+import { FC } from 'react';
 
-const Team = () => {
+const Team: FC = () => {
     return (
         <div>
             <TeamHeader />
