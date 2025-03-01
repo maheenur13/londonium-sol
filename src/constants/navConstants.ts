@@ -6,3 +6,5 @@ export enum NavItemsEnums {
     OUR_FEES = 'our-fees',
     CONTACT = 'contact',
 }
+
+export const routeList: string[] = ['team'];
