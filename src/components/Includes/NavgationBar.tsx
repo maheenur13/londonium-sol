@@ -1,9 +1,11 @@
 import { BrandLogo } from '@components/Atoms';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ChangeEvent, ChangeEventHandler, FC, useEffect, useState } from 'react';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import styled from 'styled-components';
+import { routeList } from '../../constants';
 import { navItems } from './constants';
 
 export const NavigationBar: FC = () => {
@@ -11,24 +13,33 @@ export const NavigationBar: FC = () => {
     const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchText(event.target.value);
     };
+    const router = useRouter();
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const handleScroll = (event: any) => {
-                const targetId = event.target.getAttribute('href');
-                console.log({ targetId });
+                const targetId: string = event.target.getAttribute('href');
 
-                if (targetId) {
-                    event.preventDefault(); // Prevent default anchor click behavior
-                    const targetSection = document.querySelector(targetId.replace('/', '')); // Select the target section
-                    if (!targetSection) {
-                        return;
+                const routeName = routeList.find((itm) => targetId.includes(itm));
+
+                if (routeName) {
+                    router.push(`/${routeName}`);
+                    return;
+                } else {
+                    if (targetId) {
+                        event.preventDefault(); // Prevent default anchor click behavior
+                        const targetSection = document.querySelector(targetId.replace('/', '')); // Select the target section
+                        if (!targetSection) {
+                            return;
+                        }
+                        console.log({ targetSection });
+
+                        // Scroll to the target section
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth', // Smooth scroll
+                            block: 'start', // Align to the start of the section
+                        });
                     }
-                    // Scroll to the target section
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth', // Smooth scroll
-                        block: 'start', // Align to the start of the section
-                    });
                 }
             };
 
