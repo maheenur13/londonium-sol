@@ -1,9 +1,11 @@
 import { BrandLogo } from '@components/Atoms';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChangeEvent, ChangeEventHandler, FC, useState } from 'react';
+import { useRouter } from 'next/router';
+import { ChangeEvent, ChangeEventHandler, FC, useEffect, useState } from 'react';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import styled from 'styled-components';
+import { routeList } from '../../constants';
 import { navItems } from './constants';
 
 export const NavigationBar: FC = () => {
@@ -11,6 +13,48 @@ export const NavigationBar: FC = () => {
     const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event: ChangeEvent<HTMLInputElement>) => {
         setSearchText(event.target.value);
     };
+    const router = useRouter();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const handleScroll = (event: any) => {
+                const targetId: string = event.target.getAttribute('href');
+
+                const routeName = routeList.find((itm) => targetId.includes(itm));
+
+                if (routeName) {
+                    router.push(`/${routeName}`);
+                    return;
+                } else {
+                    if (targetId) {
+                        event.preventDefault(); // Prevent default anchor click behavior
+                        const targetSection = document.querySelector(targetId.replace('/', '')); // Select the target section
+                        if (!targetSection) {
+                            return;
+                        }
+                        console.log({ targetSection });
+
+                        // Scroll to the target section
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth', // Smooth scroll
+                            block: 'start', // Align to the start of the section
+                        });
+                    }
+                }
+            };
+
+            const links = document.querySelectorAll('nav a');
+            links.forEach((link) => {
+                link.addEventListener('click', handleScroll);
+            });
+
+            return () => {
+                links.forEach((link) => {
+                    link.removeEventListener('click', handleScroll);
+                });
+            };
+        }
+    }, []);
     return (
         <>
             <NavbarWrapper key='big' expand='lg'>
@@ -33,7 +77,7 @@ export const NavigationBar: FC = () => {
                             <Nav className='justify-content-center flex-grow-1 pe-3 '></Nav>
                             <Nav>
                                 {navItems.map((item, idx) => (
-                                    <Link className='p-2' key={idx} href={item.slug}>
+                                    <Link className='p-2' key={idx} href={`#${item.slug}`}>
                                         {item.title}
                                     </Link>
                                 ))}
@@ -53,32 +97,8 @@ const NavbarWrapper = styled(Navbar)`
         text-decoration: none;
         color: var(--bs-white);
         margin: 0 0.155rem;
-    }
-`;
-
-const SearchBox = styled.div`
-    position: relative;
-    background-color: var(--bs-white);
-    padding: 0.425rem 0.825rem;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-
-    input {
-        outline: none;
-        border: none;
-
-        &::placeholder {
-            text-align: center;
-            color: #88888c;
+        &:hover {
+            color: var(--bs-primary);
         }
     }
-`;
-
-const BgImage = styled(Image)`
-    position: absolute;
-    top: 50%; /* position the top  edge of the element at the middle of the parent */
-    left: 28%; /* position the left edge of the element at the middle of the parent */
-    color: #88888c;
-    transform: translate(-50%, -50%);
 `;

@@ -67,7 +67,7 @@ export const FirstFooter: FC = () => {
                                         <Link href={'#service'}>Services</Link>
                                         <Link href={'#team'}>Team</Link>
                                         <Link href={'#our-fee'}>Our Fee</Link>
-                                        <Link href={'#our-fee'}>Contact Us</Link>
+                                        <Link href={'#contact'}>Contact Us</Link>
                                     </div>
                                     <div className='  d-flex flex-column align-items-start justify-content-between'>
                                         <h1
@@ -118,31 +118,37 @@ export const FirstFooter: FC = () => {
                 </Container>
             </Wrapper>
 
-            {!isMobile ? (
-                <Container className='p-4 px-5 bg-white d-flex justify-content-between align-items-center'>
-                    <p className='m-0 '>Copyright 2025 Londonium Solicitors. All rights reserved.</p>
-                    <>|</>
-                    <p className='m-0 '>Privacy Policy</p>
-                    <>|</>
-                    <p className='m-0 '>Cookie Policy</p>
-                    <>|</>
-                    <p className='m-0'>Term & Conditions</p>
-                </Container>
-            ) : (
-                <>
-                    <Container className='p-3'>
-                        <p className='m-0 text-center'>Copyright 2025 Londonium Solicitors. All rights reserved.</p>
-
-                        <div className='d-flex justify-content-between align-items-center mt-2'>
-                            <p className='m-0 '>Privacy Policy</p>
-                            <>|</>
-                            <p className='m-0 '>Cookie Policy</p>
-                            <>|</>
-                            <p className='m-0'>Term & Conditions</p>
-                        </div>
+            <FooterWrapper>
+                {!isMobile ? (
+                    <Container className='px-5 py-3'>
+                        <Row className='mx-auto copyright-footer'>
+                            <Col sm={6} className='mx-auto d-flex justify-content-between align-items-center'>
+                                <p className='m-0 '>Copyright 2025 Londonium Solicitors. All rights reserved.</p>
+                                <>|</>
+                                <p className='m-0 '>Privacy Policy</p>
+                                <>|</>
+                                <p className='m-0'>Cookie Policy</p>
+                                <>|</>
+                                <p className='m-0'>Term & Conditions</p>
+                            </Col>
+                        </Row>
                     </Container>
-                </>
-            )}
+                ) : (
+                    <>
+                        <Container className='p-3'>
+                            <p className='m-0 text-center'>Copyright 2025 Londonium Solicitors. All rights reserved.</p>
+
+                            <div className='d-flex justify-content-between align-items-center mt-2'>
+                                <p className='m-0'>Privacy Policy</p>
+                                <>|</>
+                                <p className='m-0'>Cookie Policy</p>
+                                <>|</>
+                                <p className='m-0'>Term & Conditions</p>
+                            </div>
+                        </Container>
+                    </>
+                )}
+            </FooterWrapper>
         </>
     );
 };
@@ -157,5 +163,12 @@ const Wrapper = styled.div<{ $isMobile: boolean }>`
         color: var(--bs-white);
         margin-bottom: 0.125rem;
         /* font-weight: 300; */
+    }
+`;
+const FooterWrapper = styled.div`
+    .copyright-footer {
+        p {
+            white-space: nowrap;
+        }
     }
 `;

@@ -1,3 +1,4 @@
+import { useResponsive } from 'hooks';
 import { FC, useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { sendToEmailJs } from 'services/emailService';
@@ -18,6 +19,7 @@ type DepartmentKey =
     | 'employment';
 
 export const Contact: FC = () => {
+    const { isMobile } = useResponsive();
     const [formElement, setFormElement] = useState<HTMLFormElement | null>();
 
     const [validated, setValidated] = useState<boolean>(false);
@@ -62,7 +64,7 @@ export const Contact: FC = () => {
     };
 
     return (
-        <FormWrapper>
+        <FormWrapper $isMobile={isMobile}>
             <h1 className='mb-4'>Tell us your story</h1>
 
             <Form
@@ -127,11 +129,11 @@ export const Contact: FC = () => {
     );
 };
 
-const FormWrapper = styled.div`
+const FormWrapper = styled.div<{ $isMobile: boolean }>`
     margin-bottom: 3rem;
     background-color: #f5f7f7;
     border-radius: 1rem;
-    padding: 3rem 4rem;
+    padding: ${({ $isMobile }) => ($isMobile ? '2rem' : '3rem 4rem')};
     .form-control {
         color: #818181;
         border: none;
